@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# Redirect www.hyosarangusa.org -> hyosarangusa.org (canonical domain)
+RewriteCond %{HTTP_HOST} ^www\.hyosarangusa\.org$ [NC]
+RewriteRule ^(.*)$ https://hyosarangusa.org/$1 [L,R=301]
+
+# Correct MIME type for the web manifest, if added later
+AddType application/manifest+json .webmanifest
+
+ErrorDocument 404 /404.html
