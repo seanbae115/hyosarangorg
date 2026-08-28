@@ -48,7 +48,7 @@ export default function ServicesBody({
             <h2>{t.portfolioHeading}</h2>
             <p className="prose">{t.portfolioNote}</p>
           </div>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0}>
             <table className="data-table">
               <thead>
                 <tr>

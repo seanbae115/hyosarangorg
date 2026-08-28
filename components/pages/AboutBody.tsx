@@ -46,7 +46,7 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
           <div className="section__head">
             <h2>{t.valuesHeading}</h2>
           </div>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0}>
             <table className="data-table">
               <tbody>
                 {t.values.map((v) => (

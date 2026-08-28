@@ -109,7 +109,7 @@ export default function KslcNavigationBody({
           <div className="section__head">
             <h2>{t.modelHeading}</h2>
           </div>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0}>
             <table className="data-table">
               <thead>
                 <tr>

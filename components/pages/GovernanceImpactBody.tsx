@@ -41,7 +41,7 @@ export default function GovernanceImpactBody({
           <div className="section__head">
             <h2>{t.frameworkHeading}</h2>
           </div>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0}>
             <table className="data-table">
               <thead>
                 <tr>

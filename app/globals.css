@@ -60,6 +60,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Stop a horizontally-scrolling child (e.g. a wide data table on a phone)
+   from making the whole page pan sideways on iOS Safari. #main is a sibling
+   of the sticky header, so this does not affect header stickiness. */
+#main {
+  overflow-x: hidden;
+}
+
 /* Serif is the section voice: h1 and h2. */
 h1,
 h2 {
@@ -470,6 +477,7 @@ a {
   font-size: 0.9rem;
   color: var(--navy);
   text-decoration: none;
+  white-space: nowrap;
 }
 .lang-toggle:hover {
   border-color: var(--terracotta);
@@ -523,6 +531,38 @@ a {
   }
   .mobile-menu a:hover {
     background: var(--sky-soft);
+  }
+}
+
+/* Tighten the header so the language toggle + Menu fit on one line
+   next to the wordmark on small phones. */
+@media (max-width: 460px) {
+  .site-header__inner {
+    gap: 10px;
+  }
+  .brand {
+    gap: 10px;
+  }
+  .brand__mark {
+    width: 40px;
+    height: 40px;
+  }
+  .brand__word b {
+    font-size: 0.95rem;
+  }
+  .brand__word small {
+    font-size: 0.64rem;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  .lang-toggle {
+    min-width: 0;
+    padding: 8px 11px;
+    font-size: 0.82rem;
+  }
+  .mobile-nav summary {
+    padding: 10px 12px;
   }
 }
 
@@ -800,10 +840,14 @@ a {
 /* ---- Data table ---- */
 
 .table-wrap {
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .data-table {
   width: 100%;
+  /* keep columns readable on phones; the wrap scrolls horizontally */
+  min-width: 34rem;
   border-collapse: collapse;
   font-size: 0.98rem;
 }
