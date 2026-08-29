@@ -100,17 +100,20 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
       {
         name: "Senior & Family Support",
         text: "Counseling and service guidance for older adults and caregivers.",
-        icon: "support",
+        image: "/photos/program-support.jpg",
+        imageAlt: "A counselor and an older adult talking across a table",
       },
       {
         name: "Citizenship & English",
         text: "Free citizenship prep and English classes for independence.",
-        icon: "language",
+        image: "/photos/program-citizenship.jpg",
+        imageAlt: "A citizenship and English class seated around a table",
       },
       {
         name: "Health & Benefits Education",
         text: "Non-clinical education and referral support.",
-        icon: "health",
+        image: "/photos/program-health.jpg",
+        imageAlt: "An instructor leading a health and benefits session for seniors",
       },
       {
         name: "Coram Deo Ensemble",
@@ -121,7 +124,8 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
       {
         name: "Youth Identity & Hyo Contest",
         text: "A writing and art competition connecting the generations.",
-        icon: "pencil",
+        image: "/photos/program-youth.jpg",
+        imageAlt: "Students working on entries for the youth Hyo art and writing contest",
       },
       {
         name: "Community & Mission Service",
@@ -138,6 +142,38 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
     identityLinkLabel: "See our governance and separation policy",
     footnote:
       "Hyosarang Mission has held federal 501(c)(3) tax-exempt status since 2003.",
+    founderHeading: "Founder & President",
+    founderName: "Rev. Young Chan Kim",
+    founderRole: "김영찬 목사",
+    founderLead:
+      "Rev. Young Chan Kim founded Hyosarang Mission in 2002 and has led its senior education, counseling, and community service ever since.",
+    founderClusters: [
+      {
+        label: "Leadership",
+        items: [
+          "Founder & President — Hyosarang Mission",
+          "Founder & Director — Hyosarang Senior College",
+          "Former President — Orange County Pastors Association",
+        ],
+      },
+      {
+        label: "Programs founded",
+        items: [
+          "Silver Family Counseling office and senior counseling ministry",
+          "Citizenship and public-benefits education",
+          "Youth filial-piety essay and art contest, with scholarships",
+          "Nursing-home outreach, cultural arts, and mission trips",
+        ],
+      },
+    ],
+    founderAwardsLabel: "Recognition",
+    founderAwards: [
+      { year: "2023", text: "Senior of the Year — California Assembly District 45" },
+      {
+        year: "2023",
+        text: "Community Service Commendation — Buena Park City Council",
+      },
+    ],
     galleryHeading: "In the community",
     galleryIntro:
       "Two decades of classes, performance, volunteer service, and fellowship — the relationships that make navigation work.",
@@ -266,17 +302,20 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
       {
         name: "시니어·가족 지원",
         text: "어르신과 돌봄 제공자를 위한 상담과 서비스 안내.",
-        icon: "support",
+        image: "/photos/program-support.jpg",
+        imageAlt: "탁자를 사이에 두고 어르신과 이야기하는 상담사",
       },
       {
         name: "시민권·영어 교육",
         text: "자립을 위한 무료 시민권 준비반과 영어 수업.",
-        icon: "language",
+        image: "/photos/program-citizenship.jpg",
+        imageAlt: "탁자에 둘러앉은 시민권·영어 수업 참가자들",
       },
       {
         name: "건강·혜택 교육",
         text: "비임상 교육과 의뢰 지원.",
-        icon: "health",
+        image: "/photos/program-health.jpg",
+        imageAlt: "시니어를 대상으로 건강·혜택 교육을 진행하는 강사",
       },
       {
         name: "코람데오 앙상블",
@@ -287,7 +326,8 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
       {
         name: "청소년 정체성·효 공모전",
         text: "세대를 잇는 글짓기·그림 대회.",
-        icon: "pencil",
+        image: "/photos/program-youth.jpg",
+        imageAlt: "효 문화 공모전 출품작을 준비하는 학생들",
       },
       {
         name: "지역사회·선교 봉사",
@@ -304,6 +344,35 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
     identityLinkLabel: "운영과 분리 원칙 보기",
     footnote:
       "효사랑 선교회는 2003년부터 연방 501(c)(3) 면세 지위를 유지하고 있습니다.",
+    founderHeading: "설립자·회장",
+    founderName: "김영찬 목사",
+    founderRole: "Rev. Young Chan Kim",
+    founderLead:
+      "김영찬 목사는 2002년 효사랑 선교회를 설립하고, 이후 시니어 교육·상담·지역사회 봉사를 이끌어 왔습니다.",
+    founderClusters: [
+      {
+        label: "리더십",
+        items: [
+          "설립자·회장 — 효사랑 선교회",
+          "설립·운영 — 효사랑 시니어대학",
+          "전 회장 — 오렌지카운티 목사회",
+        ],
+      },
+      {
+        label: "직접 세운 사업",
+        items: [
+          "실버가정상담실 개설 및 시니어 상담사역",
+          "시민권 교육 및 생활·복지정보 지원사업",
+          "청소년 효 글짓기·그림 공모전 및 장학사업",
+          "양로병원 봉사, 지역사회 문화공연, 국내외 선교",
+        ],
+      },
+    ],
+    founderAwardsLabel: "수상·표창",
+    founderAwards: [
+      { year: "2023", text: "제45지구 ‘올해의 시니어’ 선정 — 캘리포니아 주 하원" },
+      { year: "2023", text: "지역사회 봉사 표창 — 부에나파크 시의회" },
+    ],
     galleryHeading: "지역사회 속에서",
     galleryIntro:
       "20여 년간 이어 온 수업, 공연, 자원봉사, 교제 — 내비게이션을 가능하게 하는 관계들입니다.",

@@ -20,17 +20,20 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
       {
         name: "Senior & Family Support",
         text: "Counseling and service guidance.",
-        icon: "support",
+        image: "/photos/program-support.jpg",
+        imageAlt: "A counselor and an older adult talking across a table",
       },
       {
         name: "Citizenship & English",
         text: "Free citizenship prep and English classes.",
-        icon: "language",
+        image: "/photos/program-citizenship.jpg",
+        imageAlt: "A citizenship and English class seated around a table",
       },
       {
         name: "Health & Benefits Education",
         text: "Non-clinical education and referral support.",
-        icon: "health",
+        image: "/photos/program-health.jpg",
+        imageAlt: "An instructor leading a health and benefits session for seniors",
       },
       {
         name: "Coram Deo Ensemble",
@@ -41,7 +44,8 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
       {
         name: "Youth Identity & Hyo Contest",
         text: "Writing and art connecting the generations.",
-        icon: "pencil",
+        image: "/photos/program-youth.jpg",
+        imageAlt: "Students working on entries for the youth Hyo art and writing contest",
       },
       {
         name: "Community & Mission Service",
@@ -152,17 +156,20 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
       {
         name: "시니어·가족 지원",
         text: "상담과 서비스 안내.",
-        icon: "support",
+        image: "/photos/program-support.jpg",
+        imageAlt: "탁자를 사이에 두고 어르신과 이야기하는 상담사",
       },
       {
         name: "시민권·영어 교육",
         text: "무료 시민권 준비반과 영어 수업.",
-        icon: "language",
+        image: "/photos/program-citizenship.jpg",
+        imageAlt: "탁자에 둘러앉은 시민권·영어 수업 참가자들",
       },
       {
         name: "건강·혜택 교육",
         text: "비임상 교육과 의뢰 지원.",
-        icon: "health",
+        image: "/photos/program-health.jpg",
+        imageAlt: "시니어를 대상으로 건강·혜택 교육을 진행하는 강사",
       },
       {
         name: "코람데오 앙상블",
@@ -173,7 +180,8 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
       {
         name: "청소년 정체성·효 공모전",
         text: "세대를 잇는 글쓰기·미술.",
-        icon: "pencil",
+        image: "/photos/program-youth.jpg",
+        imageAlt: "효 문화 공모전 출품작을 준비하는 학생들",
       },
       {
         name: "지역사회·선교 봉사",

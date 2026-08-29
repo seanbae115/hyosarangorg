@@ -1,6 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
-import { CONTACT, FORM990_URL, type Lang } from "@/lib/nav";
+import { CONTACT, type Lang } from "@/lib/nav";
 import type { ContactCopy } from "@/lib/content/types";
 
 export default function ContactBody({
@@ -78,12 +78,6 @@ export default function ContactBody({
               <li key={f}>{f}</li>
             ))}
           </ul>
-          <p>
-            <a href={FORM990_URL} target="_blank" rel="noopener">
-              {t.form990Label}
-              <span className="visually-hidden">{newTab}</span>
-            </a>
-          </p>
         </div>
       </div>
     </PageShell>

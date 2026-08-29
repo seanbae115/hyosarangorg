@@ -47,12 +47,8 @@ export const CONTACT = {
 } as const;
 
 export const ORG = {
-  ein: "55-0790835",
   legal: {
-    en: "Hyosarang Mission is a California nonprofit religious corporation recognized as tax-exempt under IRC §501(c)(3). EIN 55-0790835.",
-    ko: "Hyosarang Mission(효사랑 선교회)은 캘리포니아 비영리 종교법인이며 미국 연방세법 501(c)(3)에 따른 면세 기관입니다. EIN 55-0790835.",
+    en: "Hyosarang Mission is a California nonprofit religious corporation recognized as tax-exempt under IRC §501(c)(3).",
+    ko: "Hyosarang Mission(효사랑 선교회)은 캘리포니아 비영리 종교법인이며 미국 연방세법 501(c)(3)에 따른 면세 기관입니다.",
   },
 } as const;
-
-export const FORM990_URL =
-  "https://projects.propublica.org/nonprofits/organizations/550790835";

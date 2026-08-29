@@ -4,7 +4,7 @@ const governanceImpact: { en: GovernanceCopy; ko: GovernanceCopy } = {
   en: {
     metaTitle: "Governance & Impact",
     metaDescription:
-      "How Hyosarang Mission keeps grant-funded work accountable and measurable: Proposed Year-One Targets, a measurement framework, strict separation of religious and grant-funded activity, Board oversight, fund accounting, data privacy, and a link to the public Form 990.",
+      "How Hyosarang Mission keeps grant-funded work accountable and measurable: Proposed Year-One Targets, a measurement framework, strict separation of religious and grant-funded activity, Board oversight, fund accounting, and data privacy.",
     heroTitle: "Governance & Impact",
     heroLead:
       "How Hyosarang Mission keeps grant-funded work accountable, measurable, and separate from religious activity.",
@@ -98,22 +98,12 @@ const governanceImpact: { en: GovernanceCopy; ko: GovernanceCopy } = {
     privacyHeading: "Data privacy",
     privacyBody:
       "We collect only the information a service requires, obtain informed consent that explains how it will be used, assign secure Case IDs, limit access by role, and report only de-identified aggregate data. An incident-response process, annual privacy training, and periodic access reviews are in place.",
-
-    form990Heading: "Public financial records",
-    form990Body:
-      "Hyosarang Mission's federal tax filings are public. Reviewers can view the organization's Form 990 records on ProPublica's Nonprofit Explorer.",
-    form990Label: "View the public Form 990",
-    recognitionAlt:
-      "Three people holding a California State Assembly Certificate of Recognition presented to a Hyosarang Senior College instructor",
-    recognitionCaption:
-      "California State Assembly Certificate of Recognition — Hyosarang Senior College",
-    viewLargerLabel: "View larger",
   },
 
   ko: {
     metaTitle: "운영·성과",
     metaDescription:
-      "효사랑 선교회가 그랜트 지원 사업을 책임 있고 측정 가능하게 운영하는 방식: 제안된 1년차 목표, 성과 측정 체계, 종교 활동과 그랜트 지원 사업의 엄격한 분리, 이사회 감독, 자금 회계, 개인정보 보호, 공개 Form 990 연결.",
+      "효사랑 선교회가 그랜트 지원 사업을 책임 있고 측정 가능하게 운영하는 방식: 제안된 1년차 목표, 성과 측정 체계, 종교 활동과 그랜트 지원 사업의 엄격한 분리, 이사회 감독, 자금 회계, 개인정보 보호.",
     heroTitle: "운영·성과",
     heroLead:
       "효사랑 선교회가 그랜트 지원 사업을 책임 있고, 측정 가능하며, 종교 활동과 분리된 방식으로 운영하는 방법.",
@@ -204,15 +194,6 @@ const governanceImpact: { en: GovernanceCopy; ko: GovernanceCopy } = {
     privacyHeading: "개인정보 보호",
     privacyBody:
       "서비스에 필요한 정보만 수집하고, 사용 방식을 설명하는 사전 동의를 받으며, 안전한 Case ID를 부여하고, 역할별로 접근을 제한하며, 비식별 집계 자료만 보고합니다. 사고 대응 절차, 연간 개인정보 교육, 정기 접근 권한 검토를 운영합니다.",
-
-    form990Heading: "공개 재정 자료",
-    form990Body:
-      "효사랑 선교회의 연방 세금 신고 자료는 공개되어 있습니다. 검토자는 ProPublica Nonprofit Explorer에서 기관의 Form 990 자료를 확인할 수 있습니다.",
-    form990Label: "공개 Form 990 보기",
-    recognitionAlt:
-      "효사랑 시니어대학 강사에게 수여된 캘리포니아 주 의회 표창장을 든 세 사람",
-    recognitionCaption: "캘리포니아 주 의회 표창 — 효사랑 시니어대학",
-    viewLargerLabel: "크게 보기",
   },
 };
 

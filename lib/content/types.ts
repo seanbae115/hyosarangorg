@@ -29,17 +29,21 @@ export interface Feature {
   icon?: IconKey;
 }
 
+/** One labeled group of credentials in the founder card. */
+export interface FounderCluster {
+  label: string;
+  items: string[];
+}
+
 export interface HomeCopy {
   metaTitle: string;
   metaDescription: string;
   heroEyebrow: string;
   heroTitle: string;
+  heroTitleAccent: string;
   heroPoints: string[];
   heroPrimary: CtaLink;
   heroSecondary: CtaLink;
-  heroBadge: string;
-  heroStat: { value: string; label: string; link: CtaLink };
-  heroPhotos: { src: string; alt: string }[];
   ribbon: { value: string; label: string }[];
   oneDoorKicker: string;
   oneDoorTitle: string;
@@ -65,7 +69,6 @@ export interface HomeCopy {
   govTitle: string;
   govBody: string;
   govLink: CtaLink;
-  form990Label: string;
   contactKicker: string;
   contactTitle: string;
   contactBody: string;
@@ -94,6 +97,13 @@ export interface AboutCopy {
   identityBody2: string;
   identityLinkLabel: string;
   footnote: string;
+  founderHeading: string;
+  founderName: string;
+  founderRole: string;
+  founderLead: string;
+  founderClusters: FounderCluster[];
+  founderAwardsLabel: string;
+  founderAwards: { year: string; text: string }[];
   galleryHeading: string;
   galleryIntro: string;
   gallery: GalleryItem[];
@@ -172,12 +182,6 @@ export interface GovernanceCopy {
   fundBody: string;
   privacyHeading: string;
   privacyBody: string;
-  form990Heading: string;
-  form990Body: string;
-  form990Label: string;
-  recognitionAlt: string;
-  recognitionCaption: string;
-  viewLargerLabel: string;
 }
 
 export interface ContactCopy {
@@ -195,5 +199,4 @@ export interface ContactCopy {
   audience: string[];
   factsHeading: string;
   facts: string[];
-  form990Label: string;
 }

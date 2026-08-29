@@ -24,6 +24,14 @@ const photos = [
   ["KakaoTalk_20260826_162253555_08.jpg", "recognition-2.jpg", 90],
   ["KakaoTalk_20260827_124923589.jpg", "art-class.jpg", 0],
   ["KakaoTalk_20260827_124923589_04.jpg", "art-class-2.jpg", 0],
+  // Program + barrier illustrations (added later, sit in the project root).
+  ["Senior & Family Support.jpg", "program-support.jpg", 0, ROOT],
+  ["Citizenship & English.jpg", "program-citizenship.jpg", 0, ROOT],
+  ["Health & Benefits Education.jpg", "program-health.jpg", 0, ROOT],
+  ["Youth Identity & Hyo Contest.jpg", "program-youth.jpg", 0, ROOT],
+  ["publicbenefits.jpg", "barrier-benefits.jpg", 0, ROOT],
+  ["housing.jpg", "barrier-housing.jpg", 0, ROOT],
+  ["transportation.jpg", "barrier-transport.jpg", 0, ROOT],
 ];
 
 for (const [src, out, rotate, baseDir = SRC] of photos) {
@@ -54,6 +62,14 @@ await sharp(`${SRC}/HYOSARANG MISSION_Senior Integrated Ministry Overview.png`)
   .png({ compressionLevel: 9 })
   .toFile("public/senior-ministry-overview.png");
 console.log("wrote public/senior-ministry-overview.png");
+
+// Home hero background — the commissioned community watercolor (bg.png).
+// Full-bleed behind the hero copy; a navy scrim sits on top in CSS.
+await sharp(`${ROOT}/bg.png`)
+  .resize({ width: 1920, withoutEnlargement: true })
+  .jpeg({ quality: 74, mozjpeg: true })
+  .toFile("public/hero-community.jpg");
+console.log("wrote public/hero-community.jpg");
 
 // Logo — pad to a white square so it sits cleanly at any size.
 await sharp(`${ROOT}/효사랑 로고.jpg`)

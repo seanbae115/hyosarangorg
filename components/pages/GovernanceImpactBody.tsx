@@ -1,7 +1,6 @@
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
-import ZoomImage from "@/components/ZoomImage";
-import { FORM990_URL, type Lang } from "@/lib/nav";
+import type { Lang } from "@/lib/nav";
 import type { GovernanceCopy } from "@/lib/content/types";
 
 export default function GovernanceImpactBody({
@@ -11,8 +10,6 @@ export default function GovernanceImpactBody({
   lang: Lang;
   t: GovernanceCopy;
 }) {
-  const newTab = lang === "ko" ? " (새 창)" : " (opens in a new tab)";
-
   return (
     <PageShell lang={lang} currentPath="/governance-impact">
       <PageHero title={t.heroTitle} lead={t.heroLead} />
@@ -99,33 +96,6 @@ export default function GovernanceImpactBody({
         <div className="shell section__head">
           <h2>{t.privacyHeading}</h2>
           <p className="prose">{t.privacyBody}</p>
-        </div>
-      </div>
-
-      {/* Public Form 990 */}
-      <div className="section section--sky-soft">
-        <div className="shell grid grid--2" style={{ alignItems: "start" }}>
-          <div>
-            <h2>{t.form990Heading}</h2>
-            <p className="prose">{t.form990Body}</p>
-            <p>
-              <a
-                className="btn btn--primary"
-                href={FORM990_URL}
-                target="_blank"
-                rel="noopener"
-              >
-                {t.form990Label}
-                <span className="visually-hidden">{newTab}</span>
-              </a>
-            </p>
-          </div>
-          <ZoomImage
-            src="/photos/recognition-1.jpg"
-            alt={t.recognitionAlt}
-            caption={t.recognitionCaption}
-            viewLabel={t.viewLargerLabel}
-          />
         </div>
       </div>
     </PageShell>

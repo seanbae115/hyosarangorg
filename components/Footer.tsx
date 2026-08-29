@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT, FORM990_URL, NAV, ORG, hrefFor, type Lang } from "@/lib/nav";
+import { CONTACT, NAV, ORG, hrefFor, type Lang } from "@/lib/nav";
 
 export default function Footer({ lang }: { lang: Lang }) {
   const ko = lang === "ko";
@@ -9,8 +9,6 @@ export default function Footer({ lang }: { lang: Lang }) {
   const grantLine = ko
     ? "재단·협력기관 문의: "
     : "Grantmakers and partners: ";
-  const form990Label = ko ? "공개 Form 990 보기" : "View the public Form 990";
-  const newTab = ko ? " (새 창)" : " (opens in a new tab)";
   const navHeading = ko ? "바로가기" : "Site";
   const contactHeading = ko ? "연락처" : "Contact";
 
@@ -55,10 +53,6 @@ export default function Footer({ lang }: { lang: Lang }) {
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             <a href={CONTACT.orgSite} target="_blank" rel="noopener">
               {CONTACT.orgSiteLabel}
-            </a>
-            <a href={FORM990_URL} target="_blank" rel="noopener">
-              {form990Label}
-              <span className="visually-hidden">{newTab}</span>
             </a>
           </div>
         </div>

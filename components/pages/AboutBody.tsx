@@ -80,6 +80,68 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
         </div>
       </div>
 
+      {/* Founder & President */}
+      <div className="section section--sky-soft">
+        <div className="shell">
+          <article className="founder-card">
+            <header className="founder-card__head">
+              <span className="founder-card__mark" aria-hidden="true">
+                <img
+                  src="/hyosarang-logo.jpg"
+                  alt=""
+                  width={72}
+                  height={72}
+                />
+              </span>
+              <div>
+                <span className="founder-card__eyebrow">{t.founderHeading}</span>
+                <h2 className="founder-card__name">{t.founderName}</h2>
+                <p className="founder-card__role">{t.founderRole}</p>
+              </div>
+            </header>
+
+            <p className="founder-card__lead">{t.founderLead}</p>
+
+            <div className="founder-card__cols">
+              {t.founderClusters.map((cluster) => (
+                <div className="founder-card__group" key={cluster.label}>
+                  <h3>{cluster.label}</h3>
+                  <ul>
+                    {cluster.items.map((item) => {
+                      const at = item.indexOf(" — ");
+                      return (
+                        <li key={item}>
+                          {at === -1 ? (
+                            item
+                          ) : (
+                            <>
+                              <b>{item.slice(0, at)}</b>
+                              <span>{item.slice(at)}</span>
+                            </>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="founder-card__awards">
+              <h3>{t.founderAwardsLabel}</h3>
+              <ul>
+                {t.founderAwards.map((award) => (
+                  <li key={award.text}>
+                    <span className="founder-card__year">{award.year}</span>
+                    <span>{award.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
       {/* Community gallery */}
       <div className="section section--paper">
         <div className="shell">
@@ -87,7 +149,12 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
             <h2>{t.galleryHeading}</h2>
             <p className="prose">{t.galleryIntro}</p>
           </div>
-          <Gallery items={t.gallery} full viewLabel={t.viewLargerLabel} />
+          <Gallery
+            items={t.gallery}
+            full
+            viewLabel={t.viewLargerLabel}
+            lang={lang}
+          />
         </div>
       </div>
 

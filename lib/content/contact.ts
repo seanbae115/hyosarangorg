@@ -25,12 +25,10 @@ const contact: { en: ContactCopy; ko: ContactCopy } = {
     factsHeading: "Organization facts",
     facts: [
       "Legal form: California nonprofit religious corporation",
-      "EIN 55-0790835",
       "Federal 501(c)(3) tax-exempt status since 2003",
       "Primary service area: Orange County, California",
       "Organization website: hyosarangusa.org",
     ],
-    form990Label: "View the public Form 990",
   },
 
   ko: {
@@ -56,12 +54,10 @@ const contact: { en: ContactCopy; ko: ContactCopy } = {
     factsHeading: "기관 정보",
     facts: [
       "법적 형태: 캘리포니아 비영리 종교법인",
-      "EIN 55-0790835",
       "2003년부터 연방 501(c)(3) 면세 지위",
       "주요 사업 지역: 캘리포니아 오렌지카운티",
       "기관 웹사이트: hyosarangusa.org",
     ],
-    form990Label: "공개 Form 990 보기",
   },
 };
 

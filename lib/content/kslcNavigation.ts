@@ -48,13 +48,15 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
         name: "Public Benefits",
         examples:
           "Medi-Cal and Medicare information and qualified referral pathways; IHSS, SSI, CalFresh, and utility support; applications, renewals, and notices.",
-        icon: "benefits",
+        image: "/photos/barrier-benefits.jpg",
+        imageAlt: "Hands completing a public-benefits application at a desk",
       },
       {
         name: "Housing",
         examples:
           "Affordable-housing information, opportunity tracking, application readiness, and housing-navigation pathways.",
-        icon: "housing",
+        image: "/photos/barrier-housing.jpg",
+        imageAlt: "House keys being handed to an older adult",
       },
       {
         name: "Food Security",
@@ -67,7 +69,8 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
         name: "Transportation",
         examples:
           "OC ACCESS, city senior-mobility programs, OCTA, and community rides — with non-duplication checks — for education, benefits, and essential services.",
-        icon: "transport",
+        image: "/photos/barrier-transport.jpg",
+        imageAlt: "A community senior-transport shuttle at a community center",
       },
       {
         name: "Digital Access",
@@ -169,13 +172,15 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
         name: "공공 혜택",
         examples:
           "Medi-Cal·Medicare 정보와 자격 있는 의뢰 경로; IHSS, SSI, CalFresh, 공과금 지원; 신청·갱신·통지서 대응.",
-        icon: "benefits",
+        image: "/photos/barrier-benefits.jpg",
+        imageAlt: "책상에서 공공 혜택 신청서를 작성하는 손",
       },
       {
         name: "주거",
         examples:
           "부담 가능한 주택 정보, 기회 파악, 신청 준비, 주거 내비게이션 경로.",
-        icon: "housing",
+        image: "/photos/barrier-housing.jpg",
+        imageAlt: "어르신에게 집 열쇠를 건네는 모습",
       },
       {
         name: "식생활 안정",
@@ -188,7 +193,8 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
         name: "교통",
         examples:
           "OC ACCESS, 시(市) 시니어 이동 프로그램, OCTA, 지역사회 차량 — 중복 확인을 거쳐 교육·혜택·필수 서비스 이용.",
-        icon: "transport",
+        image: "/photos/barrier-transport.jpg",
+        imageAlt: "커뮤니티 센터의 시니어 교통 셔틀 차량",
       },
       {
         name: "디지털 접근",

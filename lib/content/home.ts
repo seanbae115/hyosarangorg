@@ -6,7 +6,8 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
     metaDescription:
       "A faith-rooted 501(c)(3) with 20+ years serving Korean-American seniors, establishing the KSLC Navigation Team for public benefits, housing, food security, transportation, and digital access.",
     heroEyebrow: "TRUSTED SINCE 2002 · BUENA PARK, CALIFORNIA",
-    heroTitle: "Two decades of trust. Now, measurable stability.",
+    heroTitle: "Two decades of trust.",
+    heroTitleAccent: "Now, measurable stability.",
     heroPoints: [
       "20+ years educating and connecting Korean-American seniors — the community trust is already here.",
       "The KSLC Navigation Team adds what's missing: one team resolving benefits, housing, food, transportation, and digital barriers.",
@@ -16,26 +17,6 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
       href: "/kslc-navigation",
     },
     heroSecondary: { label: "See our 20+ year story", href: "/about" },
-    heroBadge: "20+ Years Community Trust",
-    heroStat: {
-      value: "5",
-      label: "barriers — one coordinated team",
-      link: { label: "How navigation works", href: "/kslc-navigation" },
-    },
-    heroPhotos: [
-      {
-        src: "/photos/digital-literacy.jpg",
-        alt: "Seniors practicing on smartphones in a digital-literacy class",
-      },
-      {
-        src: "/photos/senior-college-music.jpg",
-        alt: "Hyosarang Senior College members playing ukuleles together",
-      },
-      {
-        src: "/photos/fellowship-meal.jpg",
-        alt: "Community members sharing a meal around a long table",
-      },
-    ],
     ribbon: [
       { value: "2002", label: "California nonprofit established" },
       { value: "2003", label: "Federal 501(c)(3) tax-exempt status" },
@@ -134,7 +115,6 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
     govBody:
       "Grant-funded services are secular — no worship or church membership required. The Board controls grant funds through a separate program code.",
     govLink: { label: "Governance & Impact", href: "/governance-impact" },
-    form990Label: "View the public Form 990",
     contactKicker: "FOR GRANTMAKERS & PARTNERS",
     contactTitle: "Let's turn community trust into measurable stability",
     contactBody:
@@ -148,7 +128,8 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
     metaDescription:
       "20년 이상 한인 시니어를 섬겨 온 신앙 기반 501(c)(3) 비영리기관 효사랑 선교회가, 공공 혜택·주거·식생활·교통·디지털 접근을 돕는 KSLC 내비게이션팀을 세웁니다.",
     heroEyebrow: "2002년부터 이어온 신뢰 · 캘리포니아 부에나파크",
-    heroTitle: "20년의 신뢰, 이제 측정 가능한 안정으로.",
+    heroTitle: "20년의 신뢰,",
+    heroTitleAccent: "이제 측정 가능한 안정으로.",
     heroPoints: [
       "20년 넘게 한인 시니어를 교육하고 연결해 왔습니다 — 지역사회의 신뢰는 이미 있습니다.",
       "KSLC 내비게이션팀이 부족했던 것을 더합니다: 공공 혜택·주거·식생활·교통·디지털 장벽을 해결하는 하나의 팀.",
@@ -158,26 +139,6 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
       href: "/kslc-navigation",
     },
     heroSecondary: { label: "20년의 발자취 보기", href: "/about" },
-    heroBadge: "20년 이상 지역사회 신뢰",
-    heroStat: {
-      value: "5",
-      label: "장벽 — 하나의 조율된 팀",
-      link: { label: "내비게이션 살펴보기", href: "/kslc-navigation" },
-    },
-    heroPhotos: [
-      {
-        src: "/photos/digital-literacy.jpg",
-        alt: "디지털 교육 수업에서 스마트폰을 익히는 시니어들",
-      },
-      {
-        src: "/photos/senior-college-music.jpg",
-        alt: "함께 우쿨렐레를 연주하는 효사랑 시니어대학 참가자들",
-      },
-      {
-        src: "/photos/fellowship-meal.jpg",
-        alt: "긴 식탁에 둘러앉아 식사를 나누는 지역사회 구성원들",
-      },
-    ],
     ribbon: [
       { value: "2002", label: "캘리포니아 비영리법인 설립" },
       { value: "2003", label: "연방 501(c)(3) 면세 지위" },
@@ -276,7 +237,6 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
     govBody:
       "그랜트로 지원되는 서비스는 비종교적이며, 예배나 교회 등록을 요구하지 않습니다. 이사회가 별도 프로그램 코드로 그랜트 자금을 통제합니다.",
     govLink: { label: "운영·성과 보기", href: "/governance-impact" },
-    form990Label: "공개 Form 990 보기",
     contactKicker: "재단·협력기관을 위한 안내",
     contactTitle: "지역사회의 신뢰를 측정 가능한 안정으로",
     contactBody:

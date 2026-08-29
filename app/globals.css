@@ -14,6 +14,10 @@
      the hero stat card, and data marks. Never a fill anywhere else. */
   --terracotta: #b06438;
   --terracotta-deep: #8c4c29;
+  /* Gold — a second accent used only in the home hero (panel top-rule,
+     headline accent phrase, hero list marks). Modelled on kslcampus.org. */
+  --gold: #c8a44d;
+  --gold-deep: #7d6428;
   --warm: #f6f3ec;
   --paper: #ffffff;
   --ink: #232c34;
@@ -139,7 +143,7 @@ a {
   outline: 3px solid var(--terracotta);
   outline-offset: 2px;
 }
-:focus-visible:where(.section--navy *, .home-hero *, .page-hero *, .lightbox *) {
+:focus-visible:where(.section--navy *, .page-hero *, .lightbox *) {
   outline-color: #fff;
 }
 
@@ -160,6 +164,7 @@ a {
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
@@ -234,6 +239,18 @@ a {
 .section--navy a:not(.btn) {
   color: #fff;
 }
+/* Ghost button on a navy band: white text/border on an explicit navy fill.
+   The fill matches the band (no visual change) but makes the contrast
+   pairing unambiguous for assistive tech and audits. */
+.section--navy .btn--ghost {
+  background-color: var(--navy);
+  border-color: #fff;
+  color: #fff;
+}
+.section--navy .btn--ghost:hover {
+  background-color: #fff;
+  color: var(--navy);
+}
 
 /* Signature: the aligned hairline spine. Every mid-page section header
    opens with a 1px rule spanning the content column exactly, then the
@@ -278,7 +295,12 @@ a {
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease,
-    border-color 0.15s ease;
+    border-color 0.15s ease, transform 0.15s ease;
+}
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-1px);
+  }
 }
 .btn--primary {
   background: var(--navy);
@@ -453,6 +475,7 @@ a {
   font-weight: 600;
   text-decoration: none;
   border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 .desktop-nav a:hover {
   border-color: var(--terracotta);
@@ -490,6 +513,19 @@ a {
   .desktop-nav {
     display: none;
   }
+  /* Pair the language toggle with the menu button: same border, same
+     height, snug against it at the right edge. */
+  .nav-actions {
+    gap: 10px;
+  }
+  .lang-toggle {
+    min-width: 0;
+    min-height: 46px;
+    padding: 10px 16px;
+    border-color: var(--navy);
+    font-size: 0.95rem;
+    line-height: 1;
+  }
   .mobile-nav {
     display: block;
     position: relative;
@@ -498,11 +534,13 @@ a {
     list-style: none;
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
+    min-height: 46px;
     padding: 10px 16px;
     border: 1px solid var(--navy);
     color: var(--navy);
     font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1;
     cursor: pointer;
   }
   .mobile-nav summary::-webkit-details-marker {
@@ -558,11 +596,11 @@ a {
   }
   .lang-toggle {
     min-width: 0;
-    padding: 8px 11px;
+    padding: 9px 12px;
     font-size: 0.82rem;
   }
   .mobile-nav summary {
-    padding: 10px 12px;
+    padding: 9px 12px;
   }
 }
 
@@ -612,192 +650,117 @@ a {
   margin-top: 1.75rem;
 }
 
-/* ---- Home hero (punchy copy + bento photos) ---- */
+/* ---- Home hero (full-bleed community watercolor + a light copy panel) ---- */
 
 .home-hero {
   position: relative;
-  color: #fff;
-  padding: clamp(48px, 8vw, 92px) 0;
-  background: linear-gradient(
-    118deg,
-    var(--navy-deep) 0%,
-    var(--navy) 58%,
-    #173e62 100%
-  );
+  color: var(--ink);
+  padding: clamp(52px, 8vw, 108px) 0;
+  background: var(--warm);
   overflow: hidden;
 }
-.home-hero__grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(28px, 5vw, 64px);
-  align-items: center;
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 50%;
+  z-index: 0;
+}
+/* The watercolour is left in its own colours; the copy rides above it in a
+   warm-paper panel with a gold top rule — a nod to kslcampus.org, kept in
+   our own card idiom. */
+.home-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: clamp(28px, 4vw, 46px);
+  background: rgba(247, 244, 237, 0.9);
+  border-top: 3px solid var(--gold);
+  border-radius: 6px;
+  box-shadow: 0 24px 64px rgba(12, 34, 55, 0.22);
+}
+.home-hero .kicker {
+  color: var(--gold-deep);
 }
 .home-hero h1 {
-  color: #fff;
-  max-width: 18ch;
+  color: var(--navy);
+  max-width: 20ch;
   font-size: clamp(2rem, 3.6vw, 3rem);
+}
+.home-hero__accent {
+  display: block;
+  color: var(--gold-deep);
 }
 .home-hero__points {
   list-style: none;
   margin: 1.4rem 0 0;
   padding: 0;
   display: grid;
-  gap: 14px;
+  gap: 12px;
   max-width: 52ch;
 }
 .home-hero__points li {
   position: relative;
   padding-left: 1.6rem;
-  color: #fff;
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--ink);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
   line-height: 1.6;
 }
 .home-hero__points li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.5em;
+  top: 0.55em;
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  background: var(--terracotta);
+  background: var(--gold);
+}
+@media (max-width: 760px) {
+  .home-hero__bg {
+    object-position: 64% 50%;
+  }
 }
 
-/* Bento grid */
-.bento {
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  grid-auto-rows: min-content;
-  gap: 14px;
-}
-.bento__item {
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
-}
-.bento__large {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-.bento__s1 {
-  grid-column: 2;
-  grid-row: 1;
-}
-.bento__s2 {
-  grid-column: 2;
-  grid-row: 2;
-}
-.bento__stat {
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
-.bento .zoomable {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-}
-.bento .zoomable img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: none;
-}
-/* The two accent photos define the row heights; the large photo fills the
-   2-row span via object-fit, so its bottom edge lines up exactly with the
-   bottom of the lower accent photo. */
-.bento__s1 .zoomable img,
-.bento__s2 .zoomable img {
-  aspect-ratio: 4 / 3;
-}
-.bento__badge {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
-  z-index: 3;
-  pointer-events: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.96);
-  color: var(--navy);
-  font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.01em;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
-}
-.bento__badge::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--terracotta);
-}
-.bento-stat {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3px;
-  padding: 20px 22px;
-  min-height: 44px;
-  background: linear-gradient(
-    150deg,
-    var(--terracotta) 0%,
-    var(--terracotta-deep) 100%
-  );
-  color: #fff;
-  text-decoration: none;
-}
-.bento-stat b {
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: 2rem;
-  line-height: 1;
-}
-.bento-stat span {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.94);
-}
-.bento-stat u {
-  margin-top: 6px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-.bento-stat:hover u {
-  text-decoration: underline;
-}
-@media (max-width: 900px) {
-  .home-hero__grid {
-    grid-template-columns: 1fr;
+/* One orchestrated moment on load: the panel settles up, then its contents
+   rise in sequence. Transform-only (no opacity) so a skipped or interrupted
+   animation can never leave the hero hidden. Neutralised by the
+   prefers-reduced-motion block above. */
+@keyframes hero-settle {
+  from {
+    transform: translateY(16px);
   }
-  .bento {
-    grid-template-columns: 1fr 1fr;
-  }
-  .bento__large {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-  .bento__s1,
-  .bento__s2 {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .bento__stat {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-  .bento__large .zoomable img {
-    aspect-ratio: 16 / 9;
+  to {
+    transform: none;
   }
 }
-@media (max-width: 460px) {
-  .bento {
-    grid-template-columns: 1fr;
+@keyframes hero-rise {
+  from {
+    transform: translateY(12px);
   }
+  to {
+    transform: none;
+  }
+}
+.home-hero__inner {
+  animation: hero-settle 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+.home-hero__inner > * {
+  animation: hero-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+.home-hero__inner > *:nth-child(1) {
+  animation-delay: 0.12s;
+}
+.home-hero__inner > *:nth-child(2) {
+  animation-delay: 0.19s;
+}
+.home-hero__inner > *:nth-child(3) {
+  animation-delay: 0.26s;
+}
+.home-hero__inner > *:nth-child(4) {
+  animation-delay: 0.33s;
 }
 
 /* ---- Stepper ---- */
@@ -1005,6 +968,165 @@ a {
   }
 }
 
+/* ---- Founder & President — leadership profile ---- */
+
+.founder-card {
+  position: relative;
+  max-width: 920px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--gold);
+  border-radius: 14px;
+  box-shadow: 0 22px 54px rgba(12, 34, 55, 0.13);
+  padding: clamp(28px, 4.5vw, 52px);
+}
+.founder-card__head {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 1.6rem;
+}
+.founder-card__mark {
+  flex: none;
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--rule);
+  box-shadow: 0 8px 20px rgba(12, 34, 55, 0.14);
+  overflow: hidden;
+}
+.founder-card__mark img {
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+}
+.founder-card__eyebrow {
+  display: block;
+  font-family: var(--font-body), var(--font-kr), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 0.45rem;
+}
+.founder-card__name {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.founder-card__role {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+.founder-card__lead {
+  margin: 0 0 1.9rem;
+  padding-bottom: 1.9rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  max-width: 64ch;
+}
+.founder-card__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 52px;
+}
+.founder-card__group h3,
+.founder-card__awards h3 {
+  margin: 0 0 1rem;
+  font-family: var(--font-body), var(--font-kr), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.founder-card__group ul,
+.founder-card__awards ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+.founder-card__group ul {
+  gap: 0.75rem;
+}
+.founder-card__group li {
+  position: relative;
+  padding-left: 1.1rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.founder-card__group li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--gold);
+}
+.founder-card__group li b {
+  font-weight: 650;
+  color: var(--navy);
+}
+.founder-card__group li span {
+  color: var(--ink-soft);
+}
+.founder-card__awards {
+  margin-top: 2.1rem;
+  padding-top: 1.9rem;
+  border-top: 1px solid var(--rule);
+}
+.founder-card__awards ul {
+  gap: 0.9rem;
+}
+.founder-card__awards li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.founder-card__year {
+  flex: none;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-body), var(--font-kr), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+@media (max-width: 720px) {
+  .founder-card__head {
+    gap: 16px;
+  }
+  .founder-card__mark {
+    width: 64px;
+    height: 64px;
+  }
+  .founder-card__mark img {
+    width: 58px;
+    height: 58px;
+  }
+  .founder-card__cols {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 /* ---- Timeline ---- */
 
 .timeline {
@@ -1127,9 +1249,76 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Phones: the stacked grid becomes a one-photo-at-a-time, scroll-snapping
+   row with prev/next arrows (GalleryCarousel). A 9-photo column collapses
+   to a single swipe. */
+.gallery-carousel {
+  position: relative;
+}
+.gallery-carousel__btn {
+  display: none;
+}
 @media (max-width: 560px) {
   .gallery--full {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery--full::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery--full > .zoomfig {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  .gallery--full > .zoomfig figcaption {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .gallery--full:focus-visible {
+    outline: 3px solid var(--terracotta);
+    outline-offset: 4px;
+  }
+  /* Vertically centred on the 4:3 image (slide width == shell width). */
+  .gallery-carousel__btn {
+    position: absolute;
+    top: calc((100vw - 48px) * 0.375);
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(12, 34, 55, 0.82);
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.15s ease;
+  }
+  .gallery-carousel__btn--prev {
+    left: 6px;
+  }
+  .gallery-carousel__btn--next {
+    right: 6px;
+  }
+  .gallery-carousel__btn:hover {
+    background: rgba(12, 34, 55, 0.95);
+  }
+  .gallery-carousel__btn[disabled] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .gallery-carousel__btn svg {
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -1394,12 +1583,37 @@ a {
   text-underline-offset: 2px;
 }
 
+/* Cards feel like objects: a small lift on hover, pointer devices only.
+   Matches the scale the zoom/play controls already use. */
+@media (hover: hover) {
+  .tile,
+  .feature-card,
+  .video-card__thumb {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(12, 34, 55, 0.12);
+  }
+  .feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 44px rgba(12, 34, 55, 0.24);
+  }
+  .video-card__thumb:hover {
+    transform: translateY(-3px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .zoomable img,
   .zoomable:hover img,
   .zoomable:focus-visible img,
   .video-card__thumb:hover .video-card__play span,
-  .video-card__thumb:focus-visible .video-card__play span {
+  .video-card__thumb:focus-visible .video-card__play span,
+  .btn:hover,
+  .tile:hover,
+  .feature-card:hover,
+  .video-card__thumb:hover {
     transform: none;
   }
 }

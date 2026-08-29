@@ -4,37 +4,8 @@ import Gallery from "@/components/Gallery";
 import ZoomImage from "@/components/ZoomImage";
 import FeatureCard from "@/components/FeatureCard";
 import { Icon } from "@/components/icons";
-import { FORM990_URL, hrefFor, type Lang } from "@/lib/nav";
+import { hrefFor, type Lang } from "@/lib/nav";
 import type { CtaLink, HomeCopy } from "@/lib/content/types";
-
-function HeroPhoto({
-  photo,
-  viewLabel,
-  eager = false,
-}: {
-  photo: { src: string; alt: string };
-  viewLabel: string;
-  eager?: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      className="zoomable"
-      data-zoom-src={photo.src.replace("/photos/", "/photos/lg/")}
-      data-zoom-alt={photo.alt}
-      data-zoom-caption=""
-      aria-label={`${viewLabel}: ${photo.alt}`}
-    >
-      <img src={photo.src} alt={photo.alt} loading={eager ? "eager" : "lazy"} />
-      <span className="zoomable__hint" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="11" cy="11" r="7" />
-          <path d="m20 20-3.5-3.5M11 8v6M8 11h6" />
-        </svg>
-      </span>
-    </button>
-  );
-}
 
 export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
   const to = (link: CtaLink) =>
@@ -43,52 +14,29 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
 
   return (
     <PageShell lang={lang} currentPath="/">
-      {/* Hero — punchy copy + bento photo layout */}
+      {/* Hero — full-bleed community watercolor + a light copy panel */}
       <div className="home-hero">
-        <div className="shell home-hero__grid">
-          <div>
-            <span className="kicker" style={{ color: "var(--sky-soft)" }}>
-              {t.heroEyebrow}
-            </span>
-            <h1>{t.heroTitle}</h1>
+        <img className="home-hero__bg" src="/hero-community.jpg" alt="" />
+        <div className="shell">
+          <div className="home-hero__inner">
+            <span className="kicker">{t.heroEyebrow}</span>
+            <h1>
+              {t.heroTitle}{" "}
+              <span className="home-hero__accent">{t.heroTitleAccent}</span>
+            </h1>
             <ul className="home-hero__points">
               {t.heroPoints.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ul>
             <div className="page-hero__actions">
-              <Link className="btn btn--on-dark" href={to(t.heroPrimary)}>
+              <Link className="btn btn--primary" href={to(t.heroPrimary)}>
                 {t.heroPrimary.label}
               </Link>
-              <Link
-                className="btn btn--ghost"
-                href={to(t.heroSecondary)}
-                style={{ borderColor: "#fff", color: "#fff" }}
-              >
+              <Link className="btn btn--ghost" href={to(t.heroSecondary)}>
                 {t.heroSecondary.label}
               </Link>
             </div>
-          </div>
-
-          <div className="bento">
-            <div className="bento__item bento__large">
-              <HeroPhoto photo={t.heroPhotos[0]} viewLabel={t.viewLargerLabel} eager />
-              <span className="bento__badge">{t.heroBadge}</span>
-            </div>
-            <div className="bento__item bento__s1">
-              <HeroPhoto photo={t.heroPhotos[1]} viewLabel={t.viewLargerLabel} />
-            </div>
-            <div className="bento__item bento__s2">
-              <HeroPhoto photo={t.heroPhotos[2]} viewLabel={t.viewLargerLabel} />
-            </div>
-            <Link
-              className="bento-stat bento__stat"
-              href={to(t.heroStat.link)}
-            >
-              <b>{t.heroStat.value}</b>
-              <span>{t.heroStat.label}</span>
-              <u>{t.heroStat.link.label} →</u>
-            </Link>
           </div>
         </div>
       </div>
@@ -154,7 +102,12 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
             <span className="kicker">{t.galleryKicker}</span>
             <h2>{t.galleryTitle}</h2>
           </div>
-          <Gallery items={t.gallery} full viewLabel={t.viewLargerLabel} />
+          <Gallery
+            items={t.gallery}
+            full
+            viewLabel={t.viewLargerLabel}
+            lang={lang}
+          />
         </div>
       </div>
 
@@ -219,21 +172,14 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
                 feature={{
                   name: b.name,
                   text: b.line,
-                  image:
-                    i === 2
-                      ? "/photos/fellowship-meal.jpg"
-                      : i === 4
-                        ? "/photos/digital-literacy.jpg"
-                        : undefined,
+                  image: [
+                    "/photos/barrier-benefits.jpg",
+                    "/photos/barrier-housing.jpg",
+                    "/photos/fellowship-meal.jpg",
+                    "/photos/barrier-transport.jpg",
+                    "/photos/digital-literacy.jpg",
+                  ][i],
                   imageAlt: "",
-                  icon:
-                    i === 0
-                      ? "benefits"
-                      : i === 1
-                        ? "housing"
-                        : i === 3
-                          ? "transport"
-                          : undefined,
                 }}
               />
             ))}
@@ -251,16 +197,6 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
             <Link className="btn btn--on-dark" href={to(t.govLink)}>
               {t.govLink.label}
             </Link>
-            <a
-              className="btn btn--ghost"
-              href={FORM990_URL}
-              target="_blank"
-              rel="noopener"
-              style={{ borderColor: "#fff", color: "#fff" }}
-            >
-              {t.form990Label}
-              <span className="visually-hidden">{newTab}</span>
-            </a>
           </div>
         </div>
       </div>
