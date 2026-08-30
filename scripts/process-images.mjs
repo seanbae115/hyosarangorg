@@ -71,6 +71,14 @@ await sharp(`${ROOT}/bg.png`)
   .toFile("public/hero-community.jpg");
 console.log("wrote public/hero-community.jpg");
 
+// Founder portrait — square crop for the founder's-message card.
+await sharp(`${ROOT}/youngchankim.png`)
+  .resize(560, 560, { fit: "cover" })
+  .flatten({ background: { r: 255, g: 255, b: 255 } })
+  .jpeg({ quality: 84, mozjpeg: true })
+  .toFile("public/founder-kim.jpg");
+console.log("wrote public/founder-kim.jpg");
+
 // Logo — pad to a white square so it sits cleanly at any size.
 await sharp(`${ROOT}/효사랑 로고.jpg`)
   .resize({

@@ -80,61 +80,42 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
         </div>
       </div>
 
-      {/* Founder & President */}
+      {/* Founder's message */}
       <div className="section section--sky-soft">
         <div className="shell">
           <article className="founder-card">
-            <header className="founder-card__head">
-              <span className="founder-card__mark" aria-hidden="true">
+            <div className="founder-card__top">
+              <figure className="founder-card__portrait">
                 <img
-                  src="/hyosarang-logo.jpg"
-                  alt=""
-                  width={72}
-                  height={72}
+                  src={t.founderPortrait}
+                  alt={t.founderPortraitAlt}
+                  width={148}
+                  height={148}
                 />
-              </span>
+              </figure>
               <div>
                 <span className="founder-card__eyebrow">{t.founderHeading}</span>
                 <h2 className="founder-card__name">{t.founderName}</h2>
                 <p className="founder-card__role">{t.founderRole}</p>
               </div>
-            </header>
-
-            <p className="founder-card__lead">{t.founderLead}</p>
-
-            <div className="founder-card__cols">
-              {t.founderClusters.map((cluster) => (
-                <div className="founder-card__group" key={cluster.label}>
-                  <h3>{cluster.label}</h3>
-                  <ul>
-                    {cluster.items.map((item) => {
-                      const at = item.indexOf(" — ");
-                      return (
-                        <li key={item}>
-                          {at === -1 ? (
-                            item
-                          ) : (
-                            <>
-                              <b>{item.slice(0, at)}</b>
-                              <span>{item.slice(at)}</span>
-                            </>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
             </div>
 
-            <div className="founder-card__awards">
-              <h3>{t.founderAwardsLabel}</h3>
+            <div className="founder-card__message">
+              {t.founderMessage.map((para) => (
+                <p key={para.slice(0, 24)}>{para}</p>
+              ))}
+              <div className="founder-card__signoff">
+                {t.founderSignoff.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="founder-card__career">
+              <h3>{t.founderCareerLabel}</h3>
               <ul>
-                {t.founderAwards.map((award) => (
-                  <li key={award.text}>
-                    <span className="founder-card__year">{award.year}</span>
-                    <span>{award.text}</span>
-                  </li>
+                {t.founderCareer.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>

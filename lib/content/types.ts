@@ -29,12 +29,6 @@ export interface Feature {
   icon?: IconKey;
 }
 
-/** One labeled group of credentials in the founder card. */
-export interface FounderCluster {
-  label: string;
-  items: string[];
-}
-
 export interface HomeCopy {
   metaTitle: string;
   metaDescription: string;
@@ -100,10 +94,12 @@ export interface AboutCopy {
   founderHeading: string;
   founderName: string;
   founderRole: string;
-  founderLead: string;
-  founderClusters: FounderCluster[];
-  founderAwardsLabel: string;
-  founderAwards: { year: string; text: string }[];
+  founderPortrait: string;
+  founderPortraitAlt: string;
+  founderMessage: string[];
+  founderSignoff: string[];
+  founderCareerLabel: string;
+  founderCareer: string[];
   galleryHeading: string;
   galleryIntro: string;
   gallery: GalleryItem[];
