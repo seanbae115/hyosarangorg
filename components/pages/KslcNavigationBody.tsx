@@ -21,18 +21,6 @@ export default function KslcNavigationBody({
         imageSrc="/photos/digital-literacy.jpg"
       />
 
-      {/* Accountability */}
-      <div className="section section--paper">
-        <div className="shell section__head">
-          <h2>{t.accountabilityHeading}</h2>
-          <ul className="prose">
-            {t.accountabilityBullets.map((b) => (
-              <li key={b}>{b}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
       {/* Five-step process */}
       <div className="section section--warm">
         <div className="shell">

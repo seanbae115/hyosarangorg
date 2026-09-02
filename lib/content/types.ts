@@ -132,8 +132,6 @@ export interface KslcCopy {
   metaDescription: string;
   heroTitle: string;
   heroLead: string;
-  accountabilityHeading: string;
-  accountabilityBullets: string[];
   processHeading: string;
   steps: { n: string; title: string; body: string }[];
   barriersHeading: string;

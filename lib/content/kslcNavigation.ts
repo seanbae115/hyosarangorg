@@ -8,12 +8,6 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
     heroTitle: "The KSLC Navigation Team",
     heroLead:
       "A program of Hyosarang Mission. Hyosarang Mission is the accountable nonprofit home; the Korean Senior Life Campus (KSLC) Navigation Team is its specialized function, operating under Board-approved oversight, written procedures, and measurable outcomes.",
-    accountabilityHeading: "One accountable home, one specialized team",
-    accountabilityBullets: [
-      "Hyosarang Mission holds legal, fiscal, and programmatic responsibility.",
-      "KSLC runs screening, application support, warm handoffs, and follow-up.",
-      "Trusted outreach leads to services seniors actually receive.",
-    ],
     processHeading: "The five-step navigation process",
     steps: [
       {
@@ -132,12 +126,6 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
     heroTitle: "KSLC 내비게이션팀",
     heroLead:
       "효사랑 선교회의 사업입니다. 효사랑 선교회가 책임 있는 비영리 본부가 되고, Korean Senior Life Campus(KSLC) 내비게이션팀은 이사회 승인 감독, 서면 절차, 측정 가능한 성과 체계 아래 전문 기능을 수행합니다.",
-    accountabilityHeading: "하나의 책임 본부, 하나의 전문팀",
-    accountabilityBullets: [
-      "효사랑 선교회가 법적·재정적·사업적 책임을 집니다.",
-      "KSLC가 선별, 신청 지원, Warm Handoff, 후속 확인을 수행합니다.",
-      "신뢰에 기반한 아웃리치가 시니어가 실제로 받는 서비스로 이어집니다.",
-    ],
     processHeading: "다섯 단계 내비게이션 절차",
     steps: [
       {
