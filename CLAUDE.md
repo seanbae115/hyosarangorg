@@ -11,3 +11,5 @@
 - The desktop nav shows below 1240px as the mobile menu (raised from 1120px when Ministries was added); after adding or renaming a nav item, check `scrollWidth > clientWidth` at 1242px in English and Korean.
 - `/ministries` and `/senior-college` are the faith pages; both show the shared `FaithNotice` (separate from grant-funded services). The Wix literature-class and mexico-mission pages carry AI-generated stock; use only real photos.
 - `wix-import/inventory.json` image ids are sorted, not in page order; get order from the live Wix page before pairing images with names.
+- Copy people's names exactly as the source spells them; do not romanize or transliterate. If the source gives a name in only one language, leave it out of the other language's page.
+- Leave out names of private individuals (graduates, award recipients, student officers) when migrating Wix content; keep elected officials and the staff already shown on About.
