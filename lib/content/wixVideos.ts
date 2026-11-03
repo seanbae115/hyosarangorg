@@ -2,12 +2,15 @@
 // showed them. Titles are copied from YouTube (oEmbed, 2026-11-02); the Wix
 // pages show no titles of their own. Thumbnails: public/video/<id>.jpg.
 
-/** /hyosarang-senior-university */
+/** /hyosarang-senior-university, then three that were only in the Wix Video Library */
 export const collegeVideos = [
   { id: "zxqpXiJye1w", title: "[효사랑 시니어대학] 2021년도 겨울학기 2강 (11_23_2021)" },
   { id: "HfTbiQyQ4b8", title: "[효사랑 시니어 대학]제 9강 Oct 20 2020" },
   { id: "GBsIUMhWpkM", title: "[효사랑 시니어 대학] 제 1강 Aug25 2020" },
   { id: "lcBGX65oqUk", title: "[효사랑 시니어 대학]제 8강 Oct 13 2020" },
+  { id: "cAJysZfZzMo", title: "[효사랑 시니어대학] 2021년도 겨울학기 6강 (12_21_2021)" },
+  { id: "LNHI_Gwyw5o", title: "[효사랑 시니어대학] 난타공연1 _예수 사랑하심은 & 응원가" },
+  { id: "477PBQ_fQVw", title: "하모니카_1강" },
 ];
 
 /** /mexico-mission */
