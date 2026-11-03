@@ -442,11 +442,14 @@ a {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
+/* Wider than .shell so the English nav (about 920px at 19px) keeps clear
+   space beside the logo and language toggle. */
 .site-header__inner {
+  width: min(1320px, calc(100% - 48px));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 48px;
   min-height: 84px;
 }
 .brand {
@@ -525,7 +528,7 @@ a {
   display: none;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1360px) {
   .desktop-nav {
     display: none;
   }

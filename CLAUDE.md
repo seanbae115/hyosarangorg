@@ -10,7 +10,7 @@
 
 # Content rules
 - Faith content (ministries, missions, Bible classes) goes on separate ministries pages that say they are separate from grant-funded services; do not mix it into Services, KSLC, or Governance pages. (User decision 2026-11-02)
-- The desktop nav shows below 1240px as the mobile menu (raised from 1120px when Ministries was added); after adding or renaming a nav item, check `scrollWidth > clientWidth` at 1242px in English and Korean.
+- The desktop nav shows below 1360px as the mobile menu (1120px → 1240px when Ministries was added → 1360px on 2026-11-02, when the English nav overflowed the 1160px shell and touched the logo and language toggle). The header row is 1320px wide with a 48px gap, wider than `.shell`, so the English nav (about 930px at 19px) keeps 48px clear on each side. After adding or renaming a nav item, check `scrollWidth > clientWidth` and the logo↔nav↔toggle gaps at 1362px in English and Korean.
 - For width checks, load pages in a same-origin iframe 4px wider than the target (1246px → innerWidth 1242, 379px → 375); the iframe's scrollbar takes 4px. (tested 2026-11-02)
 - There is no ESLint config; `npx eslint` errors. Use `npx tsc --noEmit -p .` as the code check.
 - `/ministries` and `/senior-college` are the faith pages; both show the shared `FaithNotice` (separate from grant-funded services). The Wix literature-class and mexico-mission pages carry AI-generated stock; use only real photos.
