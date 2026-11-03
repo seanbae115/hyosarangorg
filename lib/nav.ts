@@ -49,7 +49,7 @@ export const CONTACT = {
   address: "7342 Orangethorpe Ave., Ste. B-113, Buena Park, CA 90621",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=7342+Orangethorpe+Ave+Ste+B-113+Buena+Park+CA+90621",
-  orgSite: "https://hyosarangusa.org",
+  orgSite: "https://www.hyosarangusa.org",
   orgSiteLabel: "hyosarangusa.org",
 } as const;
 

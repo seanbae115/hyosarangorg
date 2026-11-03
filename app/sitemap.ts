@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL, langPaths } from "@/lib/seo";
 
 export const dynamic = "force-static";
-
-const base = "https://hyosarangusa.org";
 
 const paths = [
   "/",
@@ -22,10 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
   for (const path of paths) {
-    const en = path === "/" ? base + "/" : `${base}${path}`;
-    const ko = path === "/" ? `${base}/ko` : `${base}/ko${path}`;
-    entries.push({ url: en, lastModified: now });
-    entries.push({ url: ko, lastModified: now });
+    const { en, ko } = langPaths(path);
+    const languages = { en: SITE_URL + en, ko: SITE_URL + ko };
+    entries.push({ url: languages.en, lastModified: now, alternates: { languages } });
+    entries.push({ url: languages.ko, lastModified: now, alternates: { languages } });
   }
   return entries;
 }

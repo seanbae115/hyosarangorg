@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Public_Sans } from "next/font/google";
+import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
 const serif = Newsreader({
@@ -16,14 +17,13 @@ const sans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hyosarangusa.org"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Hyosarang Mission — KSLC Navigation Team",
     template: "%s · Hyosarang Mission",
   },
   description:
     "A faith-rooted 501(c)(3) with 20+ years serving Korean-American seniors, establishing the KSLC Navigation Team for public benefits, housing, food security, transportation, and digital access.",
-  alternates: { languages: { en: "/", ko: "/ko" } },
   icons: { icon: "/favicon.svg" },
 };
 

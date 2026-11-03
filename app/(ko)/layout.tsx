@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Public_Sans, Noto_Sans_KR } from "next/font/google";
+import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
 const serif = Newsreader({
@@ -22,14 +23,13 @@ const kr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hyosarangusa.org"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "효사랑 선교회 — KSLC 내비게이션팀",
     template: "%s · 효사랑 선교회",
   },
   description:
     "20년 이상 한인 시니어를 섬겨 온 신앙 기반 501(c)(3) 비영리기관 효사랑 선교회가, 공공 혜택·주거·식생활·교통·디지털 접근을 돕는 KSLC 내비게이션팀을 세웁니다.",
-  alternates: { languages: { en: "/", ko: "/ko" } },
   icons: { icon: "/favicon.svg" },
 };
 
