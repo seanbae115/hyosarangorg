@@ -110,6 +110,36 @@ for (const [src, out] of team) {
   console.log("wrote", `public/team/${out}`);
 }
 
+// Ministries and Senior College photos (real photos only; the Wix pages also
+// carry AI-generated stock, which is left out). Same sizes as the photos above.
+const wixPhotos = [
+  ["1d13c8_a2d80c1dcd46487fbda782825374d3aa_mv2.jpg", "mission-ensenada-2026.jpg"],
+  ["1d13c8_253cdec8d0bc4337adda519151ea96f6_mv2.jpg", "nursing-home-nanta.jpg"],
+  ["1d13c8_9f5c0381e7154c7bb194914583dc49fa_mv2.jpg", "college-pottery-group.jpg"],
+  ["1d13c8_e66d441d426148a6b2b799a0b9670151_mv2.jpg", "college-bible.jpg"],
+  ["1d13c8_06676dbacff04bc584b777a46b998c21_mv2.jpg", "college-aerophone.jpg"],
+  ["1d13c8_79d30bf47dd94795a6f87e0c96721791_mv2.jpg", "college-dance.jpg"],
+  ["1d13c8_7b673bbf29c94adc868fe63315fdbb96_mv2.jpg", "college-art.jpg"],
+  ["1d13c8_c94b06a9db80482e984c2fe4c01034a4_mv2.jpg", "college-pottery.jpg"],
+  ["1d13c8_cd4aa3c22dac416bab66afdaf2bb605b_mv2.jpg", "college-harmonica.jpg"],
+  ["1d13c8_f80979d3c28c4130a8f06815a5367e64_mv2.jpg", "college-nanta.jpg"],
+  ["1d13c8_8969924c50b54988831ad433968d276f_mv2.jpg", "college-smartphone.jpg"],
+];
+for (const [src, out] of wixPhotos) {
+  const base = sharp(`${WIX}/${src}`).rotate(); // apply EXIF orientation
+  await base
+    .clone()
+    .resize({ width: 1600, withoutEnlargement: true })
+    .jpeg({ quality: 78, mozjpeg: true })
+    .toFile(`${OUT}/${out}`);
+  await base
+    .clone()
+    .resize({ width: 2400, withoutEnlargement: true })
+    .jpeg({ quality: 80, mozjpeg: true })
+    .toFile(`${OUT_LG}/${out}`);
+  console.log("wrote", `${OUT}/${out}`);
+}
+
 // Venmo QR code — keep PNG so the modules stay crisp.
 await sharp(`${WIX}/1d13c8_3907c16f2a7a4f59b0f5c43631e13a99_mv2.png`)
   .resize({ width: 480, withoutEnlargement: true })

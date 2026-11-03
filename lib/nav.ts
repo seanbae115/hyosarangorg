@@ -13,6 +13,7 @@ export const NAV: NavItem[] = [
   { key: "services", en: "Services", ko: "사업 안내", path: "/services" },
   { key: "kslc", en: "KSLC Navigation", ko: "KSLC 내비게이션", path: "/kslc-navigation" },
   { key: "governance", en: "Governance & Impact", ko: "운영·성과", path: "/governance-impact" },
+  { key: "ministries", en: "Ministries", ko: "신앙 사역", path: "/ministries" },
   { key: "support", en: "Support Us", ko: "후원", path: "/support" },
   { key: "contact", en: "Contact", ko: "문의", path: "/contact" },
 ];

@@ -222,3 +222,57 @@ export interface ContactCopy {
   factsHeading: string;
   facts: string[];
 }
+
+/** Notice on the faith-ministry pages: kept apart from grant-funded work. */
+export interface FaithNotice {
+  heading: string;
+  body: string;
+  linkLabel: string;
+}
+
+export interface MinistriesCopy {
+  metaTitle: string;
+  metaDescription: string;
+  heroTitle: string;
+  heroLead: string;
+  heroImageAlt: string;
+  notice: FaithNotice;
+  listHeading: string;
+  ministries: Feature[];
+  collegeLinkLabel: string;
+  nursingHeading: string;
+  nursingBody: string[];
+  missionHeading: string;
+  missionBody: string;
+  missionPurposesLabel: string;
+  missionPurposes: string[];
+  contactLead: string;
+  contactLinkLabel: string;
+}
+
+export interface CollegeClass {
+  name: string;
+  text: string;
+  instructor?: string;
+}
+
+export interface SeniorCollegeCopy {
+  metaTitle: string;
+  metaDescription: string;
+  heroTitle: string;
+  heroLead: string;
+  heroImageAlt: string;
+  notice: FaithNotice;
+  aboutHeading: string;
+  about: string[];
+  facts: { label: string; value: string }[];
+  classesHeading: string;
+  classesIntro: string;
+  instructorLabel: string;
+  classes: CollegeClass[];
+  galleryHeading: string;
+  gallery: GalleryItem[];
+  viewLargerLabel: string;
+  contactLead: string;
+  contactLinkLabel: string;
+}

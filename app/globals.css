@@ -213,7 +213,8 @@ a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.prose ul {
+.prose ul,
+.prose ol {
   max-width: 68ch;
   padding-left: 1.2em;
 }
@@ -524,7 +525,7 @@ a {
   display: none;
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1240px) {
   .desktop-nav {
     display: none;
   }
@@ -1100,6 +1101,50 @@ a {
   max-width: 100%;
   height: auto;
   margin: 0.4rem 0 0.8rem;
+}
+
+/* ---- Faith ministries / Senior College ---- */
+
+.faith-notice h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.4em;
+}
+.faith-notice p {
+  max-width: 68ch;
+  margin: 0 0 0.5em;
+}
+.faith-notice p:last-child {
+  margin-bottom: 0;
+}
+.faith-notice a {
+  color: var(--terracotta-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.college-facts {
+  margin: 0;
+  align-self: start;
+  background: var(--sky-soft);
+  padding: 24px 28px;
+}
+.college-facts > div + div {
+  margin-top: 1rem;
+}
+.college-facts dt {
+  font-weight: 700;
+  color: var(--navy);
+}
+.college-facts dd {
+  margin: 0.2em 0 0;
+}
+.class-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.class-list__teacher {
+  color: var(--ink-soft);
+  font-size: 0.95em;
 }
 @media (max-width: 760px) {
   .team-grid {

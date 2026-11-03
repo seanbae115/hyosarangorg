@@ -8,5 +8,6 @@
 
 # Content rules
 - Faith content (ministries, missions, Bible classes) goes on separate ministries pages that say they are separate from grant-funded services; do not mix it into Services, KSLC, or Governance pages. (User decision 2026-11-02)
-- The desktop nav shows below 1120px as the mobile menu; after adding or renaming a nav item, check `scrollWidth > clientWidth` at 1122px in English.
+- The desktop nav shows below 1240px as the mobile menu (raised from 1120px when Ministries was added); after adding or renaming a nav item, check `scrollWidth > clientWidth` at 1242px in English and Korean.
+- `/ministries` and `/senior-college` are the faith pages; both show the shared `FaithNotice` (separate from grant-funded services). The Wix literature-class and mexico-mission pages carry AI-generated stock; use only real photos.
 - `wix-import/inventory.json` image ids are sorted, not in page order; get order from the live Wix page before pairing images with names.

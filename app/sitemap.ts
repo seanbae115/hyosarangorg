@@ -10,6 +10,8 @@ const paths = [
   "/services",
   "/kslc-navigation",
   "/governance-impact",
+  "/ministries",
+  "/senior-college",
   "/support",
   "/contact",
 ];
