@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { toKo } from "@/lib/nav";
+import { toKo } from "./nav";
 
 /** Canonical origin. Vercel redirects the apex domain to www, so www is canonical. */
 export const SITE_URL = "https://www.hyosarangusa.org";
