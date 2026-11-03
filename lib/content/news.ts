@@ -1,4 +1,5 @@
 import type { NewsCopy } from "./types";
+import { contestVideos } from "./wixVideos";
 
 // News, from the old Wix blog (7 posts). Dates come from the post text or the
 // Wix "Our History" page; two posts give no date, so none is shown for them.
@@ -76,6 +77,20 @@ const news: { en: NewsCopy; ko: NewsCopy } = {
         imageAlt: "Senior College students standing behind the Korean War Memorial sign",
       },
     ],
+    contestVideos: {
+      heading: "Youth contest award ceremonies",
+      note: "Videos and titles are in Korean.",
+      videos: [
+        { ...contestVideos[0], titleLang: "ko", desc: "10th Hyo Drawing & Essay Contest awards ceremony (Apr 22, 2023)" },
+        { ...contestVideos[1], titleLang: "ko", desc: "12th Hyo Essay & Drawing Contest awards ceremony (Apr 26, 2025)" },
+        { ...contestVideos[2], titleLang: "ko", desc: "11th Hyo Essay & Drawing Contest awards ceremony" },
+        {
+          ...contestVideos[3],
+          titleLang: "ko",
+          desc: "12th U.S. Youth Identity Hyo Essay & Drawing Contest, a segment by GBC, a Korean American gospel broadcaster",
+        },
+      ],
+    },
     historyLinkLabel: "See our full history",
   },
 
@@ -149,6 +164,12 @@ const news: { en: NewsCopy; ko: NewsCopy } = {
         imageAlt: "한국전 참전 기념비 표지 뒤에 선 시니어대학 학생들",
       },
     ],
+    contestVideos: {
+      heading: "청소년 공모전 시상식 영상",
+      videos: contestVideos.map((v, i) =>
+        i === 3 ? { ...v, desc: "GBC 미주복음방송 영상" } : v,
+      ),
+    },
     historyLinkLabel: "전체 연혁 보기",
   },
 };

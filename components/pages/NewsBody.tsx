@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import ZoomImage from "@/components/ZoomImage";
+import VideoGrid from "@/components/VideoGrid";
 import { hrefFor, type Lang } from "@/lib/nav";
 import type { NewsCopy } from "@/lib/content/types";
 
@@ -46,6 +47,17 @@ export default function NewsBody({ lang, t }: { lang: Lang; t: NewsCopy }) {
           <p className="prose" style={{ marginTop: "2rem" }}>
             <Link href={hrefFor("/history", lang)}>{t.historyLinkLabel} &rarr;</Link>
           </p>
+        </div>
+      </div>
+
+      {/* Youth contest award ceremonies (YouTube) */}
+      <div className="section section--warm">
+        <div className="shell">
+          <div className="section__head">
+            <h2>{t.contestVideos.heading}</h2>
+            {t.contestVideos.note ? <p>{t.contestVideos.note}</p> : null}
+          </div>
+          <VideoGrid lang={lang} videos={t.contestVideos.videos} />
         </div>
       </div>
     </PageShell>

@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import Gallery from "@/components/Gallery";
 import FaithNotice from "@/components/FaithNotice";
+import VideoGrid from "@/components/VideoGrid";
 import { hrefFor, type Lang } from "@/lib/nav";
 import type { SeniorCollegeCopy } from "@/lib/content/types";
 
@@ -84,6 +85,17 @@ export default function SeniorCollegeBody({
             viewLabel={t.viewLargerLabel}
             lang={lang}
           />
+        </div>
+      </div>
+
+      {/* Class videos (YouTube) */}
+      <div className="section section--warm">
+        <div className="shell">
+          <div className="section__head">
+            <h2>{t.classVideos.heading}</h2>
+            {t.classVideos.note ? <p>{t.classVideos.note}</p> : null}
+          </div>
+          <VideoGrid lang={lang} videos={t.classVideos.videos} />
         </div>
       </div>
 

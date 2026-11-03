@@ -3,14 +3,13 @@ import PageShell from "@/components/PageShell";
 import Gallery from "@/components/Gallery";
 import ZoomImage from "@/components/ZoomImage";
 import FeatureCard from "@/components/FeatureCard";
-import { Icon } from "@/components/icons";
+import VideoGrid from "@/components/VideoGrid";
 import { hrefFor, type Lang } from "@/lib/nav";
 import type { CtaLink, HomeCopy } from "@/lib/content/types";
 
 export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
   const to = (link: CtaLink) =>
     link.external ? link.href : hrefFor(link.href, lang);
-  const newTab = lang === "ko" ? " (새 창)" : " (opens in a new tab)";
 
   return (
     <PageShell lang={lang} currentPath="/">
@@ -118,43 +117,7 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
             <span className="kicker">{t.videosKicker}</span>
             <h2>{t.videosTitle}</h2>
           </div>
-          <div className="video-grid">
-            {t.videos.map((v) => (
-              <div className="video-card" key={v.id}>
-                <button
-                  type="button"
-                  className="video-card__thumb"
-                  data-video-id={v.id}
-                  data-video-title={v.title}
-                  aria-label={`${t.videoPlayLabel}: ${v.title}`}
-                >
-                  <img
-                    src={`/video/${v.id}.jpg`}
-                    alt=""
-                    loading="lazy"
-                    width={1280}
-                    height={720}
-                  />
-                  <span className="video-card__play" aria-hidden="true">
-                    <span>
-                      <Icon name="play" />
-                    </span>
-                  </span>
-                </button>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
-                <a
-                  className="video-card__link"
-                  href={`https://www.youtube.com/watch?v=${v.id}`}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  {t.videoWatchLabel}
-                  <span className="visually-hidden">{newTab}</span> ↗
-                </a>
-              </div>
-            ))}
-          </div>
+          <VideoGrid lang={lang} videos={t.videos} />
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import type { FaithNotice, MinistriesCopy } from "./types";
+import { missionVideos } from "./wixVideos";
 
 // Faith ministries. Kept on their own pages, apart from grant-funded services
 // (Services, KSLC Navigation, Governance). Source: old Wix site pages
@@ -65,6 +66,16 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
       "To join the local missionaries' passion for the gospel and take part in building God's kingdom.",
       "To serve the people of Mexico with what we learned through Senior College education and training.",
     ],
+    missionVideos: {
+      heading: "Ensenada mission videos",
+      note: "Videos and titles are in Korean.",
+      videos: [
+        { ...missionVideos[0], titleLang: "ko", desc: "Spring 2024 short-term mission to Mexico (June 26–27, 2024)" },
+        { ...missionVideos[1], titleLang: "ko", desc: "Fall-semester short-term mission to Mexico (Dec 5–6)" },
+        { ...missionVideos[2], titleLang: "ko", desc: "Mission news: short-term mission to Mexico, July 18–19, 2022" },
+        { ...missionVideos[3], titleLang: "ko", desc: "Senior College mission to Ensenada, Mexico (Nov 29–30)" },
+      ],
+    },
     contactLead: "Would you like to join a ministry or support a mission trip?",
     contactLinkLabel: "Contact us",
   },
@@ -116,6 +127,10 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
       "현지 선교사님의 복음을 향한 열정에 동참하여 하나님 나라를 세우는 일에 참여합니다.",
       "시니어대학의 교육과 훈련으로 배운 것을 멕시코의 영혼들과 나눕니다.",
     ],
+    missionVideos: {
+      heading: "엔세나다 단기선교 영상",
+      videos: missionVideos,
+    },
     contactLead: "사역에 함께하시거나 단기선교를 후원하고 싶으신가요?",
     contactLinkLabel: "문의하기",
   },

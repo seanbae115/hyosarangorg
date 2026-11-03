@@ -99,8 +99,6 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
         desc: "Music that turns students into performers and volunteers at nursing homes and community events.",
       },
     ],
-    videoPlayLabel: "Play video",
-    videoWatchLabel: "Watch on YouTube",
     barriersKicker: "WHAT THE NAVIGATION TEAM RESOLVES",
     barriersTitle: "Five barriers, one coordinated response",
     barriers: [
@@ -221,8 +219,6 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
         desc: "학생을 양로병원과 지역 행사의 공연자·자원봉사자로 세우는 음악입니다.",
       },
     ],
-    videoPlayLabel: "영상 재생",
-    videoWatchLabel: "유튜브에서 보기",
     barriersKicker: "내비게이션팀이 해결하는 것",
     barriersTitle: "다섯 가지 장벽, 하나의 조율된 대응",
     barriers: [

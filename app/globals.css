@@ -1666,10 +1666,16 @@ a {
 
 /* ---- Video cards (YouTube facade) ---- */
 
+/* At most two per row, so four videos sit 2×2 instead of 3 + 1. */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 28px;
+}
+@media (min-width: 700px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .video-card {
   display: flex;

@@ -1,5 +1,6 @@
 import { faithNotice } from "./ministries";
 import type { SeniorCollegeCopy } from "./types";
+import { collegeVideos } from "./wixVideos";
 
 // Hyosarang Senior College, a faith ministry. Source: old Wix site pages
 // hyosarang-senior-university, class, and the per-class pages.
@@ -146,6 +147,16 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
       },
     ],
     viewLargerLabel: "View larger",
+    classVideos: {
+      heading: "Class videos",
+      note: "Videos and titles are in Korean.",
+      videos: [
+        { ...collegeVideos[0], titleLang: "ko", desc: "Winter 2021 term, class 2 (Nov 23, 2021)" },
+        { ...collegeVideos[1], titleLang: "ko", desc: "Class 9 (Oct 20, 2020)" },
+        { ...collegeVideos[2], titleLang: "ko", desc: "Class 1 (Aug 25, 2020)" },
+        { ...collegeVideos[3], titleLang: "ko", desc: "Class 8 (Oct 13, 2020)" },
+      ],
+    },
     contactLead: "Interested in enrolling for the next semester?",
     contactLinkLabel: "Contact us",
   },
@@ -291,6 +302,10 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
       },
     ],
     viewLargerLabel: "크게 보기",
+    classVideos: {
+      heading: "강의 영상",
+      videos: collegeVideos,
+    },
     contactLead: "다음 학기 등록을 원하시나요?",
     contactLinkLabel: "문의하기",
   },

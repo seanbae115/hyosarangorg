@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import FeatureCard from "@/components/FeatureCard";
 import FaithNotice from "@/components/FaithNotice";
+import VideoGrid from "@/components/VideoGrid";
 import { hrefFor, type Lang } from "@/lib/nav";
 import type { MinistriesCopy } from "@/lib/content/types";
 
@@ -73,6 +74,17 @@ export default function MinistriesBody({
               ))}
             </ol>
           </div>
+        </div>
+      </div>
+
+      {/* Ensenada mission videos (YouTube) */}
+      <div className="section section--warm">
+        <div className="shell">
+          <div className="section__head">
+            <h2>{t.missionVideos.heading}</h2>
+            {t.missionVideos.note ? <p>{t.missionVideos.note}</p> : null}
+          </div>
+          <VideoGrid lang={lang} videos={t.missionVideos.videos} />
         </div>
       </div>
 

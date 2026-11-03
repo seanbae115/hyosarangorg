@@ -16,8 +16,19 @@ export interface GalleryItem {
 export interface VideoItem {
   /** YouTube video id */
   id: string;
+  /** The title as published on YouTube; never invented. */
   title: string;
-  desc: string;
+  /** Set when the title's language differs from the page's (e.g. "ko"). */
+  titleLang?: string;
+  desc?: string;
+}
+
+/** A titled block of YouTube cards on a content page. */
+export interface VideoSection {
+  heading: string;
+  /** Optional line under the heading, e.g. "Videos are in Korean." */
+  note?: string;
+  videos: VideoItem[];
 }
 
 /** A visual feature card: photo background OR icon panel, with a title. */
@@ -54,8 +65,6 @@ export interface HomeCopy {
   videosKicker: string;
   videosTitle: string;
   videos: VideoItem[];
-  videoPlayLabel: string;
-  videoWatchLabel: string;
   barriersKicker: string;
   barriersTitle: string;
   barriers: { name: string; line: string }[];
@@ -252,6 +261,7 @@ export interface NewsCopy {
   heroTitle: string;
   heroLead: string;
   items: NewsItem[];
+  contestVideos: VideoSection;
   historyLinkLabel: string;
 }
 
@@ -279,6 +289,7 @@ export interface MinistriesCopy {
   missionBody: string;
   missionPurposesLabel: string;
   missionPurposes: string[];
+  missionVideos: VideoSection;
   contactLead: string;
   contactLinkLabel: string;
 }
@@ -306,6 +317,7 @@ export interface SeniorCollegeCopy {
   galleryHeading: string;
   gallery: GalleryItem[];
   viewLargerLabel: string;
+  classVideos: VideoSection;
   contactLead: string;
   contactLinkLabel: string;
 }
