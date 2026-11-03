@@ -478,7 +478,7 @@ a {
 }
 .desktop-nav {
   display: flex;
-  gap: 28px;
+  gap: clamp(18px, 2vw, 28px);
   align-items: center;
 }
 .desktop-nav a {
@@ -487,6 +487,7 @@ a {
   min-height: 44px;
   color: var(--navy);
   font-weight: 600;
+  white-space: nowrap;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-color 0.15s ease, color 0.15s ease;
@@ -523,7 +524,7 @@ a {
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1120px) {
   .desktop-nav {
     display: none;
   }
@@ -1054,6 +1055,58 @@ a {
   color: var(--ink-soft);
   font-size: 1rem;
 }
+
+/* ---- Team cards (About) ---- */
+
+.team-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.team-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 28px 20px;
+  text-align: center;
+}
+.team-card img {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: 0 10px 26px rgba(12, 34, 55, 0.18);
+}
+.team-card h3 {
+  margin: 1.1rem 0 0;
+}
+.team-card__alt {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+}
+.team-card__role {
+  margin: 0.6rem 0 0;
+  color: var(--sky);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.support-qr {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  margin: 0.4rem 0 0.8rem;
+}
+@media (max-width: 760px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .founder-card__message > p {
   max-width: 68ch;
   margin: 0 0 1.15em;

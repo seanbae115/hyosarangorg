@@ -100,6 +100,13 @@ export interface AboutCopy {
   founderSignoff: string[];
   founderCareerLabel: string;
   founderCareer: string[];
+  teamHeading: string;
+  team: { name: string; nameAlt: string; role: string; photo: string; photoAlt: string }[];
+  awardHeading: string;
+  awardBody: string;
+  awardCols: { year: string; recipients: string; levels: string };
+  awards: { year: string; recipients: number; levels: string }[];
+  awardNote: string;
   galleryHeading: string;
   galleryIntro: string;
   gallery: GalleryItem[];
@@ -176,6 +183,27 @@ export interface GovernanceCopy {
   fundBody: string;
   privacyHeading: string;
   privacyBody: string;
+}
+
+export interface SupportCopy {
+  metaTitle: string;
+  metaDescription: string;
+  heroTitle: string;
+  heroLead: string;
+  waysHeading: string;
+  venmoLabel: string;
+  venmoBody: string;
+  venmoLinkLabel: string;
+  venmoQrAlt: string;
+  zelleLabel: string;
+  zelleBody: string;
+  zelleNameLabel: string;
+  zellePhoneLabel: string;
+  mailLabel: string;
+  mailBody: string;
+  hoursLabel: string;
+  hours: string;
+  taxNote: string;
 }
 
 export interface ContactCopy {

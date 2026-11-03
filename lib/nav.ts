@@ -13,6 +13,7 @@ export const NAV: NavItem[] = [
   { key: "services", en: "Services", ko: "사업 안내", path: "/services" },
   { key: "kslc", en: "KSLC Navigation", ko: "KSLC 내비게이션", path: "/kslc-navigation" },
   { key: "governance", en: "Governance & Impact", ko: "운영·성과", path: "/governance-impact" },
+  { key: "support", en: "Support Us", ko: "후원", path: "/support" },
   { key: "contact", en: "Contact", ko: "문의", path: "/contact" },
 ];
 
@@ -39,6 +40,11 @@ export const CONTACT = {
   email: "hyosarangus@gmail.com",
   phone: "714-670-8004",
   phoneHref: "tel:+17146708004",
+  phone2: "714-334-5099",
+  phone2Href: "tel:+17143345099",
+  venmoUser: "Hyosarangus-Mission",
+  zelleName: "Peter Kim",
+  zellePhone: "562-833-5520",
   address: "7342 Orangethorpe Ave., Ste. B-113, Buena Park, CA 90621",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=7342+Orangethorpe+Ave+Ste+B-113+Buena+Park+CA+90621",

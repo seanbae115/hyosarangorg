@@ -10,6 +10,7 @@ const paths = [
   "/services",
   "/kslc-navigation",
   "/governance-impact",
+  "/support",
   "/contact",
 ];
 

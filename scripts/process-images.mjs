@@ -90,3 +90,29 @@ await sharp(`${ROOT}/효사랑 로고.jpg`)
   .jpeg({ quality: 92 })
   .toFile("public/hyosarang-logo.jpg");
 console.log("wrote public/hyosarang-logo.jpg");
+
+// Imports from the old Wix site (gitignored wix-import/images, originals).
+const WIX = "wix-import/images";
+await mkdir("public/team", { recursive: true });
+
+// Team portraits — square crop, face sits in the upper part of the frame.
+const team = [
+  ["1d13c8_df76da926eec46bfb8d8f18764411b8d_mv2.png", "kim-young-chan.jpg"],
+  ["1d13c8_9f2088ddb7e94c659cfa78f18bfa9747_mv2.png", "seo-jun-seok.jpg"],
+  ["1d13c8_3d508adee0d646f6ba906239e37324a0_mv2.png", "cho-seong-woo.jpg"],
+];
+for (const [src, out] of team) {
+  await sharp(`${WIX}/${src}`)
+    .resize(480, 480, { fit: "cover", position: "top" })
+    .flatten({ background: { r: 255, g: 255, b: 255 } })
+    .jpeg({ quality: 84, mozjpeg: true })
+    .toFile(`public/team/${out}`);
+  console.log("wrote", `public/team/${out}`);
+}
+
+// Venmo QR code — keep PNG so the modules stay crisp.
+await sharp(`${WIX}/1d13c8_3907c16f2a7a4f59b0f5c43631e13a99_mv2.png`)
+  .resize({ width: 480, withoutEnlargement: true })
+  .png({ compressionLevel: 9, palette: true })
+  .toFile("public/venmo-qr.png");
+console.log("wrote public/venmo-qr.png");

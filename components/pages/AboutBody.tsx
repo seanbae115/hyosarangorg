@@ -80,6 +80,39 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
         </div>
       </div>
 
+      {/* Presidential Volunteer Service Award */}
+      <div className="section section--paper">
+        <div className="shell">
+          <div className="section__head">
+            <h2>{t.awardHeading}</h2>
+            <p className="prose">{t.awardBody}</p>
+          </div>
+          <div className="table-wrap" tabIndex={0}>
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">{t.awardCols.year}</th>
+                  <th scope="col">{t.awardCols.recipients}</th>
+                  <th scope="col">{t.awardCols.levels}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {t.awards.map((a) => (
+                  <tr key={a.year}>
+                    <th scope="row">{a.year}</th>
+                    <td>{a.recipients}</td>
+                    <td>{a.levels}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="note" style={{ marginTop: "1.5rem" }}>
+            <p style={{ margin: 0 }}>{t.awardNote}</p>
+          </div>
+        </div>
+      </div>
+
       {/* Founder's message */}
       <div className="section section--sky-soft">
         <div className="shell">
@@ -120,6 +153,31 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
               </ul>
             </div>
           </article>
+        </div>
+      </div>
+
+      {/* Team */}
+      <div className="section section--paper">
+        <div className="shell">
+          <div className="section__head">
+            <h2>{t.teamHeading}</h2>
+          </div>
+          <ul className="team-grid">
+            {t.team.map((m) => (
+              <li key={m.photo} className="team-card">
+                <img
+                  src={m.photo}
+                  alt={m.photoAlt}
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                />
+                <h3>{m.name}</h3>
+                <p className="team-card__alt">{m.nameAlt}</p>
+                <p className="team-card__role">{m.role}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

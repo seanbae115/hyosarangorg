@@ -41,6 +41,8 @@ export default function ContactBody({
               <h3>{t.phoneLabel}</h3>
               <p>
                 <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+                <br />
+                <a href={CONTACT.phone2Href}>{CONTACT.phone2}</a>
               </p>
             </div>
             <div className="card">
