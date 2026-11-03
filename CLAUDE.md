@@ -4,6 +4,7 @@
 - Vercel serves the site from GitHub `seanbae115/hyosarangorg` (master). Domains and DNS are at Wix (`ns0/ns1.wixdns.net`).
 - Canonical origin is `https://www.hyosarangusa.org` (user decision 2026-11-02; Vercel redirects the apex to `www.`). It lives in `lib/seo.ts` `SITE_URL`; each page sets `alternates: pageAlternates(path, lang)` for its canonical and hreflang links, so a new page must too.
 - `public/.htaccess` is for Apache and does nothing on Vercel. Redirects live in `lib/redirects.ts` (loaded by `next.config.ts`): old Wix paths map to the closest page, and any path on `hyosarangus.com` moves to `SITE_URL`. The site is a server build, not `output: "export"`: Vercel ignored `vercel.json` redirects on the static export (tested 2026-11-02). Test redirects with `npx next start` and `curl -H "Host: ..."`.
+- Deploy config changes (next.config, redirects, build mode) to a branch first; read the Vercel build result with `gh api repos/seanbae115/hyosarangorg/commits/<sha>/status` and fast-forward master only on success. Preview URLs need the hyosarang team login.
 - The Vercel project is in team `hyosarang`, which the `seanbae115@gmail.com` Vercel login (team KCLC) cannot open; dashboard steps go to the user.
 - The old Wix site is `www.hyosarangus.com` (Wix site "Hyosarang Mission"). Content being migrated from it lives in gitignored `wix-import/` (`inventory.json` = page text, `manifest.json` = page → images, `images/` = originals up to 13 MB). Resize with `npm run images` before copying anything into `public/`.
 
