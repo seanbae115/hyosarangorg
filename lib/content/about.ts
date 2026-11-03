@@ -43,6 +43,7 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
       },
     ],
     timelineHeading: "A path built over two decades",
+    timelineLinkLabel: "See our full history",
     timeline: [
       {
         year: "2002",
@@ -303,6 +304,7 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
       },
     ],
     timelineHeading: "20여 년에 걸쳐 쌓아 온 길",
+    timelineLinkLabel: "전체 연혁 보기",
     timeline: [
       { year: "2002", event: "캘리포니아 비영리법인 설립; 양로병원 사역 시작." },
       {

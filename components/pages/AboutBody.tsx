@@ -77,6 +77,11 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
               </li>
             ))}
           </ol>
+          <p className="prose" style={{ marginTop: "1.5rem" }}>
+            <Link href={hrefFor("/history", lang)}>
+              {t.timelineLinkLabel} &rarr;
+            </Link>
+          </p>
         </div>
       </div>
 

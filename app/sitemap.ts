@@ -12,6 +12,8 @@ const paths = [
   "/governance-impact",
   "/ministries",
   "/senior-college",
+  "/news",
+  "/history",
   "/support",
   "/contact",
 ];

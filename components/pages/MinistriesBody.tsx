@@ -47,6 +47,9 @@ export default function MinistriesBody({
             >
               {t.collegeLinkLabel} &rarr;
             </Link>
+            <Link className="btn btn--ghost" href={hrefFor("/news", lang)}>
+              {t.newsLinkLabel} &rarr;
+            </Link>
           </div>
         </div>
       </div>

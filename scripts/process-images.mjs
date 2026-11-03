@@ -124,6 +124,13 @@ const wixPhotos = [
   ["1d13c8_cd4aa3c22dac416bab66afdaf2bb605b_mv2.jpg", "college-harmonica.jpg"],
   ["1d13c8_f80979d3c28c4130a8f06815a5367e64_mv2.jpg", "college-nanta.jpg"],
   ["1d13c8_8969924c50b54988831ad433968d276f_mv2.jpg", "college-smartphone.jpg"],
+  // News (old Wix blog posts)
+  ["1d13c8_1f48ee582009488981c15f24ed2e5bce_mv2.jpg", "news-fall-2026.jpg"],
+  ["1d13c8_ae842dca7ad9443487027e7c007aa320_mv2.jpg", "news-bible-college.jpg"],
+  ["1d13c8_4a4ff4153e194af382f98293f214befa_mv2.jpg", "news-spring-2026.jpg"],
+  ["1d13c8_5be73af8f5ed40a6a6c510ff1f3ec526f000.jpg", "news-contest-13.jpg"],
+  ["1d13c8_f28c36116f26450ba302d5c9ca4e8c15_mv2.jpg", "news-concert.jpg"],
+  ["1d13c8_84f1447105e64b0480141b4b1241aaf4_mv2.png", "news-veterans.jpg"],
 ];
 for (const [src, out] of wixPhotos) {
   const base = sharp(`${WIX}/${src}`).rotate(); // apply EXIF orientation

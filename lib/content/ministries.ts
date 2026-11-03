@@ -50,6 +50,7 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
       },
     ],
     collegeLinkLabel: "About Hyosarang Senior College",
+    newsLinkLabel: "News",
     nursingHeading: "Nursing-home ministry",
     nursingBody: [
       "Many parents spend their last years in nursing homes because of physical weakness. This ministry brings them comfort and builds up their faith, so they can live with joy and the hope of heaven as God's children.",
@@ -100,6 +101,7 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
       },
     ],
     collegeLinkLabel: "효사랑 시니어대학 자세히 보기",
+    newsLinkLabel: "소식",
     nursingHeading: "양로병원 사역",
     nursingBody: [
       "육신의 연약함 때문에 양로병원에서 노후를 보내고 계신 부모님들이 영육 간에 강건하시고, 하나님의 자녀로서 천국의 소망을 품고 기쁘게 사시도록 믿음을 세워 드리는 사역입니다.",

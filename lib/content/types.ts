@@ -82,6 +82,7 @@ export interface AboutCopy {
   valuesHeading: string;
   values: { name: string; meaning: string }[];
   timelineHeading: string;
+  timelineLinkLabel: string;
   timeline: { year: string; event: string }[];
   programsHeading: string;
   programsIntro: string;
@@ -223,6 +224,37 @@ export interface ContactCopy {
   facts: string[];
 }
 
+export interface HistoryYear {
+  year: string;
+  items: { date: string; text: string }[];
+}
+
+export interface HistoryCopy {
+  metaTitle: string;
+  metaDescription: string;
+  heroTitle: string;
+  heroLead: string;
+  years: HistoryYear[];
+}
+
+export interface NewsItem {
+  /** Display date; omitted when the source post gives none. */
+  date?: string;
+  title: string;
+  body: string[];
+  image?: string;
+  imageAlt?: string;
+}
+
+export interface NewsCopy {
+  metaTitle: string;
+  metaDescription: string;
+  heroTitle: string;
+  heroLead: string;
+  items: NewsItem[];
+  historyLinkLabel: string;
+}
+
 /** Notice on the faith-ministry pages: kept apart from grant-funded work. */
 export interface FaithNotice {
   heading: string;
@@ -240,6 +272,7 @@ export interface MinistriesCopy {
   listHeading: string;
   ministries: Feature[];
   collegeLinkLabel: string;
+  newsLinkLabel: string;
   nursingHeading: string;
   nursingBody: string[];
   missionHeading: string;
