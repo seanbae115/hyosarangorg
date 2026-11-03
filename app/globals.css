@@ -43,7 +43,7 @@
   --t-lede: clamp(1.1rem, 1.4vw, 1.25rem);
   --t-body: 1.1875rem;
   --t-sm: 0.9rem;
-  --t-kicker: 0.75rem;
+  --t-kicker: 0.875rem;
 
   /* Default Korean-capable fallback. The (ko) layout's next/font class
      overrides this with the Noto Sans KR variable (class selector beats
@@ -70,6 +70,12 @@ body {
   font-size: var(--t-body);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Korean wraps between words, not mid-word ("안정으 / 로."). */
+:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 /* Stop a horizontally-scrolling child (e.g. a wide data table on a phone)
@@ -477,7 +483,7 @@ a {
 }
 .brand__word small {
   color: var(--ink-soft);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   letter-spacing: 0.1em;
 }
 .desktop-nav {
@@ -733,6 +739,17 @@ a {
   height: 9px;
   border-radius: 999px;
   background: var(--gold);
+}
+/* Tap-to-call under the hero buttons, for visitors who need help now. */
+.home-hero__call {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 8px;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 @media (max-width: 760px) {
   .home-hero__bg {

@@ -15,9 +15,10 @@ const sans = Public_Sans({
   variable: "--font-body",
   display: "swap",
 });
+// No weight list: the variable font gives every weight from one set of
+// @font-face rules. Three static weights tripled the render-blocking CSS.
 const kr = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
   variable: "--font-kr",
   display: "swap",
 });

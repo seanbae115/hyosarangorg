@@ -4,7 +4,7 @@ import Gallery from "@/components/Gallery";
 import ZoomImage from "@/components/ZoomImage";
 import FeatureCard from "@/components/FeatureCard";
 import VideoGrid from "@/components/VideoGrid";
-import { hrefFor, type Lang } from "@/lib/nav";
+import { CONTACT, hrefFor, type Lang } from "@/lib/nav";
 import type { CtaLink, HomeCopy } from "@/lib/content/types";
 
 export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
@@ -36,6 +36,9 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
                 {t.heroSecondary.label}
               </Link>
             </div>
+            <a className="home-hero__call" href={CONTACT.phoneHref}>
+              {lang === "ko" ? "전화 문의" : "Call us"} {CONTACT.phone}
+            </a>
           </div>
         </div>
       </div>

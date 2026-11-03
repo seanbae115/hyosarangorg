@@ -2,7 +2,7 @@ import type { HomeCopy } from "./types";
 
 const home: { en: HomeCopy; ko: HomeCopy } = {
   en: {
-    metaTitle: "Hyosarang Mission — KSLC Navigation Team",
+    metaTitle: "Hyosarang Mission — KSLC Navigation Team, Buena Park",
     metaDescription:
       "A faith-rooted 501(c)(3) with 20+ years serving Korean-American seniors, establishing the KSLC Navigation Team for public benefits, housing, food security, transportation, and digital access.",
     heroEyebrow: "TRUSTED SINCE 2002 · BUENA PARK, CALIFORNIA",
@@ -122,7 +122,7 @@ const home: { en: HomeCopy; ko: HomeCopy } = {
   },
 
   ko: {
-    metaTitle: "효사랑 선교회 — KSLC 내비게이션팀",
+    metaTitle: "효사랑 선교회 — KSLC 내비게이션팀 · 부에나파크",
     metaDescription:
       "20년 이상 한인 시니어를 섬겨 온 신앙 기반 501(c)(3) 비영리기관 효사랑 선교회가, 공공 혜택·주거·식생활·교통·디지털 접근을 돕는 KSLC 내비게이션팀을 세웁니다.",
     heroEyebrow: "2002년부터 이어온 신뢰 · 캘리포니아 부에나파크",
