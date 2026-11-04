@@ -115,7 +115,7 @@ const governanceImpact: { en: GovernanceCopy; ko: GovernanceCopy } = {
       { value: "150", label: "지역주민 아웃리치" },
       { value: "100", label: "경제 안정 선별" },
       { value: "60", label: "개별 내비게이션 사례" },
-      { value: "50", label: "완료된 Warm Handoff" },
+      { value: "50", label: "완료된 직접 연결" },
       { value: "70%+", label: "실제 이용 확인 목표율" },
       { value: "35", label: "개선이 확인된 가구" },
     ],
@@ -141,7 +141,7 @@ const governanceImpact: { en: GovernanceCopy; ko: GovernanceCopy } = {
       {
         domain: "내비게이션",
         measures:
-          "선별, 실행 계획, Warm Handoff, 완료율, 미해결 사례, 후속 확인 적시성.",
+          "선별, 실행 계획, 직접 연결, 완료율, 미해결 사례, 후속 확인 적시성.",
         cycle: "월별 / 분기",
       },
       {

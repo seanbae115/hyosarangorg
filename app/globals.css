@@ -60,6 +60,11 @@ html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 96px;
 }
+@media (min-width: 1200px) {
+  html {
+    scroll-padding-top: 148px;
+  }
+}
 
 body {
   margin: 0;
@@ -76,6 +81,16 @@ body {
 :lang(ko) {
   word-break: keep-all;
   overflow-wrap: anywhere;
+}
+/* Korean headings: Noto Sans KR first, so Latin letters inside a Korean
+   heading ("KSLC의") do not switch to the English serif mid-line. */
+:lang(ko) :is(h1, h2) {
+  font-family: var(--font-kr), var(--font-body), sans-serif;
+  letter-spacing: -0.01em;
+}
+/* Wide tracking suits English capitals, not Hangul: "2 0 0 2 년". */
+:lang(ko) :is(.kicker, .footer-col__h, .boundary-card h3, .founder-card__eyebrow, .brand__word small) {
+  letter-spacing: 0.02em;
 }
 
 /* Stop a horizontally-scrolling child (e.g. a wide data table on a phone)
@@ -448,15 +463,16 @@ a {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
-/* Wider than .shell so the English nav (about 920px at 19px) keeps clear
-   space beside the logo and language toggle. */
+/* Two rows on wide screens: logo + call + language on top, the ten-item
+   nav below (ten items do not fit beside the logo). Both rows are wider
+   than .shell. */
 .site-header__inner {
   width: min(1320px, calc(100% - 48px));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
-  min-height: 84px;
+  gap: 24px;
+  min-height: 76px;
 }
 .brand {
   display: flex;
@@ -487,14 +503,19 @@ a {
   letter-spacing: 0.1em;
 }
 .desktop-nav {
+  border-top: 1px solid var(--rule);
+}
+.desktop-nav__inner {
+  width: min(1320px, calc(100% - 48px));
+  margin-inline: auto;
   display: flex;
-  gap: clamp(18px, 2vw, 28px);
+  gap: clamp(16px, 1.9vw, 30px);
   align-items: center;
 }
 .desktop-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 52px;
   color: var(--navy);
   font-weight: 600;
   white-space: nowrap;
@@ -512,6 +533,22 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+.header-call {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+  color: var(--navy);
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 720px) {
+  .header-call {
+    display: none;
+  }
 }
 .lang-toggle {
   display: inline-flex;
@@ -534,7 +571,9 @@ a {
   display: none;
 }
 
-@media (max-width: 1360px) {
+/* Below this width the second-row nav no longer fits (EN is the widest);
+   check scrollWidth at the breakpoint after adding or renaming an item. */
+@media (max-width: 1199px) {
   .desktop-nav {
     display: none;
   }
@@ -614,7 +653,7 @@ a {
     font-size: 0.95rem;
   }
   .brand__word small {
-    font-size: 0.64rem;
+    font-size: 0.75rem;
   }
   .nav-actions {
     gap: 8px;
@@ -866,6 +905,32 @@ a {
   border-collapse: collapse;
   font-size: 0.98rem;
 }
+/* Two-column tables fit a phone screen; no sideways scroll. */
+.table-wrap--fit .data-table {
+  min-width: 0;
+}
+/* Wider tables scroll sideways on phones: say so, pinned to the left
+   edge while the table scrolls. Hidden from screen readers (alt text ""),
+   which read the table as a table. */
+@media (max-width: 620px) {
+  .table-wrap:not(.table-wrap--fit)::before {
+    position: sticky;
+    left: 0;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  :lang(en) .table-wrap:not(.table-wrap--fit)::before {
+    content: "Swipe sideways to see the whole table →";
+    content: "Swipe sideways to see the whole table →" / "";
+  }
+  :lang(ko) .table-wrap:not(.table-wrap--fit)::before {
+    content: "표를 옆으로 밀어서 끝까지 보세요 →";
+    content: "표를 옆으로 밀어서 끝까지 보세요 →" / "";
+  }
+}
 .data-table caption {
   text-align: left;
   color: var(--ink-soft);
@@ -1111,7 +1176,8 @@ a {
 }
 .team-card__role {
   margin: 0.6rem 0 0;
-  color: var(--sky);
+  /* Darker than --sky, which failed 4.5:1 on white. */
+  color: #3b6890;
   font-weight: 700;
   font-size: 0.92rem;
 }
@@ -1379,6 +1445,19 @@ a {
 .zoomable:focus-visible img {
   transform: scale(1.03);
 }
+/* Diagrams: show the whole image at its own shape, never cropped. */
+.zoomfig--whole .zoomable img {
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: var(--paper);
+}
+.zoomfig--whole .zoomable:hover img,
+.zoomfig--whole .zoomable:focus-visible img {
+  transform: none;
+}
+.zoomfig--whole .zoomable__hint {
+  opacity: 1;
+}
 .zoomable__hint {
   position: absolute;
   right: 12px;
@@ -1594,16 +1673,39 @@ a {
 .feature-grid--4 {
   grid-template-columns: repeat(4, 1fr);
 }
+/* Five cards as 3 + 2 (two wider cards on the second row), so no card
+   sits alone on its own row. */
+.feature-grid--five {
+  grid-template-columns: repeat(6, 1fr);
+}
+.feature-grid--five > * {
+  grid-column: span 2;
+}
+.feature-grid--five > :nth-child(n + 4) {
+  grid-column: span 3;
+}
 @media (max-width: 980px) {
   .feature-grid,
-  .feature-grid--4 {
+  .feature-grid--4,
+  .feature-grid--five {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .feature-grid--five > *,
+  .feature-grid--five > :nth-child(n + 4) {
+    grid-column: auto;
+  }
+  .feature-grid--five > :nth-child(5) {
+    grid-column: 1 / -1;
   }
 }
 @media (max-width: 600px) {
   .feature-grid,
-  .feature-grid--4 {
+  .feature-grid--4,
+  .feature-grid--five {
     grid-template-columns: 1fr;
+  }
+  .feature-grid--five > :nth-child(5) {
+    grid-column: auto;
   }
 }
 .feature-card {
@@ -1781,6 +1883,9 @@ a {
 .video-card__link {
   margin-top: auto;
   align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--terracotta-deep);
@@ -1896,10 +2001,12 @@ a {
 .footer-col span {
   color: var(--ink-soft);
 }
+/* 44px rows: easy to tap for older readers. */
 .footer-col a {
   color: var(--navy);
-  display: inline-block;
-  padding: 5px 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .footer-legal {
   margin-top: 28px;

@@ -37,7 +37,7 @@ export default function KslcNavigationBody({
           <div className="section__head">
             <h2>{t.barriersHeading}</h2>
           </div>
-          <div className="feature-grid">
+          <div className="feature-grid feature-grid--five">
             {t.barriers.map((b) => (
               <FeatureCard
                 key={b.name}
@@ -97,7 +97,7 @@ export default function KslcNavigationBody({
           <div className="section__head">
             <h2>{t.modelHeading}</h2>
           </div>
-          <div className="table-wrap" tabIndex={0}>
+          <div className="table-wrap table-wrap--fit" tabIndex={0}>
             <table className="data-table">
               <thead>
                 <tr>

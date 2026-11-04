@@ -76,6 +76,7 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
             alt={t.oneDoorImageAlt}
             caption={t.oneDoorCaption}
             viewLabel={t.viewLargerLabel}
+            whole
           />
         </div>
       </div>
@@ -165,7 +166,7 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
             <span className="kicker">{t.barriersKicker}</span>
             <h2>{t.barriersTitle}</h2>
           </div>
-          <div className="feature-grid feature-grid--4">
+          <div className="feature-grid feature-grid--five">
             {t.barriers.map((b, i) => (
               <FeatureCard
                 key={b.name}

@@ -122,7 +122,7 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
   ko: {
     metaTitle: "KSLC 내비게이션팀",
     metaDescription:
-      "KSLC 내비게이션팀은 효사랑 선교회의 사업입니다. 선별 및 접수 → 실행 계획 → 신청 지원 → Warm Handoff → 3·14·30일 후속 확인의 다섯 단계 한국어 절차로 공공 혜택·주거·식생활·교통·디지털 접근을 지원합니다.",
+      "KSLC 내비게이션팀은 효사랑 선교회의 사업입니다. 선별 및 접수 → 실행 계획 → 신청 지원 → 직접 연결 → 3·14·30일 후속 확인의 다섯 단계 한국어 절차로 공공 혜택·주거·식생활·교통·디지털 접근을 지원합니다.",
     heroTitle: "KSLC 내비게이션팀",
     heroLead:
       "효사랑 선교회의 사업입니다. 효사랑 선교회가 책임 있는 비영리 본부가 되고, Korean Senior Life Campus(KSLC) 내비게이션팀은 이사회 승인 감독, 서면 절차, 측정 가능한 성과 체계 아래 전문 기능을 수행합니다.",
@@ -145,7 +145,7 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
       },
       {
         n: "4",
-        title: "Warm Handoff (직접 연결)",
+        title: "직접 연결",
         body: "동의를 받아 기관 담당자 또는 자격 있는 파트너에게 직접 연결하고, 연락처·의뢰일·다음 단계를 기록합니다.",
       },
       {
@@ -223,7 +223,7 @@ const kslcNavigation: { en: KslcCopy; ko: KslcCopy } = {
       },
       {
         hyosarang: "양로병원 사역과 자원봉사자 양성",
-        kslc: "기관·자격 파트너로의 Warm Handoff",
+        kslc: "기관·자격 파트너로의 직접 연결",
       },
       {
         hyosarang: "책임 있는 수탁자와 이사회 감독",

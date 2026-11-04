@@ -44,8 +44,6 @@ export default function Footer({ lang }: { lang: Lang }) {
                 {ko ? item.ko : item.en}
               </Link>
             ))}
-            {/* Not in the header nav (no room); linked here and from Home. */}
-            <Link href={hrefFor("/news", lang)}>{ko ? "소식" : "News"}</Link>
           </nav>
 
           <div className="footer-col">

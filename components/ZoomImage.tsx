@@ -16,8 +16,11 @@ export default function ZoomImage({
   caption,
   zoomSrc,
   eager = false,
+  whole = false,
   viewLabel = "View larger",
 }: {
+  /** Show the whole image at its own shape (diagrams), not a 4:3 crop. */
+  whole?: boolean;
   src: string;
   alt: string;
   caption?: string;
@@ -29,7 +32,7 @@ export default function ZoomImage({
   const label = caption ? `${viewLabel}: ${caption}` : `${viewLabel}: ${alt}`;
 
   return (
-    <figure className="zoomfig">
+    <figure className={whole ? "zoomfig zoomfig--whole" : "zoomfig"}>
       <button
         type="button"
         className="zoomable"
