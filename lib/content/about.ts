@@ -124,8 +124,8 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
         name: "Coram Deo Ensemble",
         href: "/senior-college",
         text: "A senior vocal ensemble that sings and performs in the community.",
-        image: "/photos/senior-college-nanta.jpg",
-        imageAlt: "Seniors playing nanta percussion with drumsticks raised",
+        image: "/photos/senior-college-choir.jpg",
+        imageAlt: "Senior College choir singing together",
       },
       {
         name: "Youth Identity & Hyo Contest",
@@ -373,8 +373,8 @@ const about: { en: AboutCopy; ko: AboutCopy } = {
         name: "코람데오 중창단",
         href: "/senior-college",
         text: "지역사회에서 노래하고 공연하는 시니어 중창단.",
-        image: "/photos/senior-college-nanta.jpg",
-        imageAlt: "채를 들고 난타를 연주하는 시니어들",
+        image: "/photos/senior-college-choir.jpg",
+        imageAlt: "함께 노래하는 시니어대학 합창단",
       },
       {
         name: "청소년 정체성·효 공모전",
