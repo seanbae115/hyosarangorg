@@ -127,6 +127,16 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
         caption: "Harmonica",
       },
       {
+        src: "/photos/senior-college-choir.jpg",
+        alt: "Senior College choir singing together",
+        caption: "Chorus",
+      },
+      {
+        src: "/photos/senior-college-music.jpg",
+        alt: "Senior College members playing ukuleles together",
+        caption: "Ukulele",
+      },
+      {
         src: "/photos/college-art.jpg",
         alt: "Seniors painting at classroom tables",
         caption: "Art",
@@ -294,6 +304,16 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
         src: "/photos/college-harmonica.jpg",
         alt: "악보 화면 옆에서 하모니카를 연주하는 강사",
         caption: "하모니카",
+      },
+      {
+        src: "/photos/senior-college-choir.jpg",
+        alt: "함께 노래하는 시니어대학 합창단",
+        caption: "합창",
+      },
+      {
+        src: "/photos/senior-college-music.jpg",
+        alt: "함께 우쿨렐레를 연주하는 시니어대학 참가자들",
+        caption: "우쿨렐레",
       },
       {
         src: "/photos/college-art.jpg",
