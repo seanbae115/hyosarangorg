@@ -1951,8 +1951,8 @@ a {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.8fr 1.1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 1.3fr 1fr;
+  gap: 48px;
 }
 .footer-grid .brand {
   padding-top: 0;
@@ -1972,27 +1972,38 @@ a {
 .footer-col {
   display: grid;
   align-content: start;
-  gap: 6px;
 }
 .footer-col__h {
   font-family: var(--font-body), var(--font-kr), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin: 0 0 0.25rem;
+  color: var(--navy);
+  margin: 0 0 0.5rem;
 }
-.footer-col a,
 .footer-col span {
   color: var(--ink-soft);
+  padding: 10px 0;
+  line-height: 1.5;
 }
-/* 44px rows: easy to tap for older readers. */
+/* 44px rows: easy to tap for older readers. Site links sit in two
+   columns so ten items do not make one tall list. */
 .footer-col a {
   color: var(--navy);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   min-height: 44px;
+  line-height: 1.3;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Fill top-to-bottom, then the next column, so the order reads like the
+     header menu (Home, About, History… down the first column). */
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+  column-gap: 24px;
 }
 .footer-legal {
   margin-top: 28px;

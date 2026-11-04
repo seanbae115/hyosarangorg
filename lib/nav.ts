@@ -9,14 +9,16 @@ export interface NavItem {
 }
 
 // Home is listed because many seniors do not know the logo links home.
-// Ministries sits before KSLC Navigation (user decision 2026-11-03).
+// Ministries follows History, before the grant-funded group (Services,
+// KSLC, Governance), which stays together. The KSLC menu label says what
+// the team does; page titles keep the program name. (User decisions 2026-11-03)
 export const NAV: NavItem[] = [
   { key: "home", en: "Home", ko: "홈", path: "/" },
   { key: "about", en: "About Us", ko: "기관 소개", path: "/about" },
   { key: "history", en: "History", ko: "연혁", path: "/history" },
-  { key: "services", en: "Services", ko: "사업 안내", path: "/services" },
   { key: "ministries", en: "Ministries", ko: "신앙 사역", path: "/ministries" },
-  { key: "kslc", en: "KSLC Navigation", ko: "KSLC 내비게이션", path: "/kslc-navigation" },
+  { key: "services", en: "Services", ko: "사업 안내", path: "/services" },
+  { key: "kslc", en: "Get Help (KSLC)", ko: "생활 도움 (KSLC)", path: "/kslc-navigation" },
   { key: "governance", en: "Governance & Impact", ko: "운영·성과", path: "/governance-impact" },
   { key: "news", en: "News", ko: "소식", path: "/news" },
   { key: "support", en: "Support Us", ko: "후원", path: "/support" },

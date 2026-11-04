@@ -39,11 +39,13 @@ export default function Footer({ lang }: { lang: Lang }) {
 
           <nav className="footer-col" aria-label={navHeading}>
             <h2 className="footer-col__h">{navHeading}</h2>
-            {NAV.map((item) => (
-              <Link key={item.key} href={hrefFor(item.path, lang)}>
-                {ko ? item.ko : item.en}
-              </Link>
-            ))}
+            <div className="footer-links">
+              {NAV.map((item) => (
+                <Link key={item.key} href={hrefFor(item.path, lang)}>
+                  {ko ? item.ko : item.en}
+                </Link>
+              ))}
+            </div>
           </nav>
 
           <div className="footer-col">
