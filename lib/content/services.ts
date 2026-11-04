@@ -37,7 +37,7 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
       },
       {
         name: "Coram Deo Ensemble",
-        text: "Senior-led music and nanta performance.",
+        text: "A senior vocal ensemble that sings and performs in the community.",
         image: "/photos/senior-college-choir.jpg",
         imageAlt: "Senior College choir singing together",
       },
@@ -172,8 +172,8 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
         imageAlt: "시니어를 대상으로 건강·혜택 교육을 진행하는 강사",
       },
       {
-        name: "코람데오 앙상블",
-        text: "시니어 주도 음악·난타 공연.",
+        name: "코람데오 중창단",
+        text: "지역사회에서 노래하고 공연하는 시니어 중창단.",
         image: "/photos/senior-college-choir.jpg",
         imageAlt: "함께 노래하는 시니어대학 합창단",
       },
@@ -220,8 +220,8 @@ const services: { en: ServicesCopy; ko: ServicesCopy } = {
         benefit: "이해 향상과 자격 있는 제공자·기관으로의 연결.",
       },
       {
-        area: "코람데오 시니어 앙상블",
-        activities: "시니어 앙상블, 문화 참여, 공연, 지역사회 봉사.",
+        area: "코람데오 시니어 중창단",
+        activities: "중창단, 문화 참여, 공연, 지역사회 봉사.",
         benefit: "사회적 고립 완화, 목적 있는 참여, 세대 간 연결.",
       },
       {

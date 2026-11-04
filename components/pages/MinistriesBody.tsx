@@ -39,17 +39,7 @@ export default function MinistriesBody({
           </div>
           <div className="feature-grid">
             {t.ministries.map((m) => (
-              <FeatureCard
-                key={m.name}
-                feature={{
-                  ...m,
-                  // Same-page anchors work as-is in either language.
-                  href:
-                    m.href && !m.href.startsWith("#")
-                      ? hrefFor(m.href, lang)
-                      : m.href,
-                }}
-              />
+              <FeatureCard key={m.name} feature={m} lang={lang} />
             ))}
           </div>
           <div className="actions" style={{ marginTop: "1.5rem" }}>

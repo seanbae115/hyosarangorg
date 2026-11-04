@@ -34,7 +34,7 @@ export default function AboutBody({ lang, t }: { lang: Lang; t: AboutCopy }) {
           </div>
           <div className="feature-grid">
             {t.programs.map((p) => (
-              <FeatureCard key={p.name} feature={p} />
+              <FeatureCard key={p.name} feature={p} lang={lang} />
             ))}
           </div>
         </div>

@@ -1,21 +1,27 @@
 import Link from "next/link";
 import { Icon } from "@/components/icons";
 import type { Feature } from "@/lib/content/types";
+import { hrefFor, type Lang } from "@/lib/nav";
 
 /**
  * Visual feature card: a photo background with a title overlay, or a
  * navy->sky gradient panel with a large line icon. Same footprint either way.
  * `size="lg"` makes a taller, bolder card (used for the KSLC barrier areas).
- * With `feature.href` the whole card is a link (already resolved for the
- * page language by the caller).
+ * With `feature.href` the whole card is a link; site paths get the page
+ * language prefix, same-page anchors ("#nursing") are left as they are.
  */
 export default function FeatureCard({
   feature,
   size = "md",
+  lang = "en",
 }: {
   feature: Feature;
   size?: "md" | "lg";
+  lang?: Lang;
 }) {
+  const href = feature.href?.startsWith("#")
+    ? feature.href
+    : feature.href && hrefFor(feature.href, lang);
   const cls = `feature-card feature-card--${size} ${
     feature.image ? "feature-card--photo" : "feature-card--icon"
   }`;
@@ -46,9 +52,9 @@ export default function FeatureCard({
     </>
   );
 
-  if (feature.href) {
+  if (href) {
     return (
-      <Link className={`${cls} feature-card--link`} href={feature.href}>
+      <Link className={`${cls} feature-card--link`} href={href}>
         {inner}
       </Link>
     );
