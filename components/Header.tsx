@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LanguageToggle from "@/components/LanguageToggle";
-import { CONTACT, NAV, hrefFor, type Lang } from "@/lib/nav";
+import { NAV, hrefFor, type Lang } from "@/lib/nav";
 
 export default function Header({
   lang,
@@ -14,7 +14,6 @@ export default function Header({
   const sub = lang === "ko" ? "Hyosarang Mission" : "";
   const menuLabel = lang === "ko" ? "메뉴" : "Menu";
   const navLabel = lang === "ko" ? "주요 메뉴" : "Main menu";
-  const callLabel = lang === "ko" ? "전화" : "Call";
 
   const items = NAV.map((item) => ({
     label: lang === "ko" ? item.ko : item.en,
@@ -40,9 +39,6 @@ export default function Header({
         </Link>
 
         <div className="nav-actions">
-          <a className="header-call" href={CONTACT.phoneHref}>
-            {callLabel} {CONTACT.phone}
-          </a>
           <LanguageToggle lang={lang} currentPath={currentPath} />
           <details className="mobile-nav">
             <summary>{menuLabel}</summary>

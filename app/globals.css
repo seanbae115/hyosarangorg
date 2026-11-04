@@ -509,7 +509,9 @@ a {
   width: min(1320px, calc(100% - 48px));
   margin-inline: auto;
   display: flex;
-  gap: clamp(16px, 1.9vw, 30px);
+  /* Centered under the logo row so the row does not lean left. */
+  justify-content: center;
+  gap: clamp(16px, 1.9vw, 36px);
   align-items: center;
 }
 .desktop-nav a {
@@ -533,22 +535,6 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
-}
-.header-call {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 4px;
-  color: var(--navy);
-  font-weight: 700;
-  white-space: nowrap;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-@media (max-width: 720px) {
-  .header-call {
-    display: none;
-  }
 }
 .lang-toggle {
   display: inline-flex;
