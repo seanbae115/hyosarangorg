@@ -283,7 +283,6 @@ export interface MinistriesCopy {
   notice: FaithNotice;
   listHeading: string;
   ministries: Feature[];
-  collegeLinkLabel: string;
   newsLinkLabel: string;
   nursingHeading: string;
   nursingBody: string[];

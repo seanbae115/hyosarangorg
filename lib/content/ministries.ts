@@ -53,7 +53,6 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
         href: "#mission",
       },
     ],
-    collegeLinkLabel: "About Hyosarang Senior College",
     newsLinkLabel: "News",
     nursingHeading: "Nursing-home ministry",
     nursingBody: [
@@ -123,7 +122,6 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
         href: "#mission",
       },
     ],
-    collegeLinkLabel: "효사랑 시니어대학 자세히 보기",
     newsLinkLabel: "소식",
     nursingHeading: "양로병원 사역",
     nursingBody: [

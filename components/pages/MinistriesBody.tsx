@@ -43,12 +43,6 @@ export default function MinistriesBody({
             ))}
           </div>
           <div className="actions" style={{ marginTop: "1.5rem" }}>
-            <Link
-              className="btn btn--primary"
-              href={hrefFor("/senior-college", lang)}
-            >
-              {t.collegeLinkLabel} &rarr;
-            </Link>
             <Link className="btn btn--ghost" href={hrefFor("/news", lang)}>
               {t.newsLinkLabel} &rarr;
             </Link>

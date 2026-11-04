@@ -5,6 +5,7 @@ import ZoomImage from "@/components/ZoomImage";
 import FeatureCard from "@/components/FeatureCard";
 import VideoGrid from "@/components/VideoGrid";
 import { CONTACT, hrefFor, type Lang } from "@/lib/nav";
+import news from "@/lib/content/news";
 import type { CtaLink, HomeCopy } from "@/lib/content/types";
 
 export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
@@ -94,6 +95,39 @@ export default function HomeBody({ lang, t }: { lang: Lang; t: HomeCopy }) {
               {t.aboutLink.label}
             </Link>
           </p>
+        </div>
+      </div>
+
+      {/* Latest news — the three newest posts with a photo */}
+      <div className="section section--paper">
+        <div className="shell">
+          <div className="section__head">
+            <span className="kicker">{lang === "ko" ? "소식" : "News"}</span>
+            <h2>{lang === "ko" ? "최근 소식" : "Latest news"}</h2>
+          </div>
+          <div className="feature-grid">
+            {news[lang].items
+              .filter((item) => item.image)
+              .slice(0, 3)
+              .map((item) => (
+                <FeatureCard
+                  key={item.title}
+                  lang={lang}
+                  feature={{
+                    name: item.title,
+                    text: item.date,
+                    image: item.image,
+                    imageAlt: item.imageAlt,
+                    href: "/news",
+                  }}
+                />
+              ))}
+          </div>
+          <div className="actions" style={{ marginTop: "1.5rem" }}>
+            <Link className="btn btn--ghost" href={hrefFor("/news", lang)}>
+              {lang === "ko" ? "소식 전체 보기" : "All news"} &rarr;
+            </Link>
+          </div>
         </div>
       </div>
 
