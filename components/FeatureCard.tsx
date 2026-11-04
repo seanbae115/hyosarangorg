@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Icon } from "@/components/icons";
 import type { Feature } from "@/lib/content/types";
 
@@ -5,6 +6,8 @@ import type { Feature } from "@/lib/content/types";
  * Visual feature card: a photo background with a title overlay, or a
  * navy->sky gradient panel with a large line icon. Same footprint either way.
  * `size="lg"` makes a taller, bolder card (used for the KSLC barrier areas).
+ * With `feature.href` the whole card is a link (already resolved for the
+ * page language by the caller).
  */
 export default function FeatureCard({
   feature,
@@ -17,8 +20,8 @@ export default function FeatureCard({
     feature.image ? "feature-card--photo" : "feature-card--icon"
   }`;
 
-  return (
-    <article className={cls}>
+  const inner = (
+    <>
       {feature.image ? (
         <img
           className="feature-card__img"
@@ -30,8 +33,25 @@ export default function FeatureCard({
       ) : feature.icon ? (
         <Icon name={feature.icon} className="feature-card__icon" />
       ) : null}
-      <h3>{feature.name}</h3>
+      <h3>
+        {feature.name}
+        {feature.href ? (
+          <span className="feature-card__arrow" aria-hidden="true">
+            {" "}
+            &rarr;
+          </span>
+        ) : null}
+      </h3>
       {feature.text ? <p>{feature.text}</p> : null}
-    </article>
+    </>
   );
+
+  if (feature.href) {
+    return (
+      <Link className={`${cls} feature-card--link`} href={feature.href}>
+        {inner}
+      </Link>
+    );
+  }
+  return <article className={cls}>{inner}</article>;
 }

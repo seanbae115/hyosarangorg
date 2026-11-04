@@ -34,13 +34,10 @@ const WIX_PATHS: Record<string, string[]> = {
     "/ukulele-class",
     "/writting-class",
   ],
-  "/ministries/": [
-    "/ministry-mission",
-    "/nursing-home-ministry",
-    "/mexico-mission",
-    "/mexco-mission",
-    "/filial-piety-campaign",
-  ],
+  "/ministries/": ["/ministry-mission", "/filial-piety-campaign"],
+  // Section anchors on /ministries (ids in MinistriesBody).
+  "/ministries/#nursing": ["/nursing-home-ministry"],
+  "/ministries/#mission": ["/mexico-mission", "/mexco-mission"],
   "/news/": [
     "/blog",
     "/post/:slug*",

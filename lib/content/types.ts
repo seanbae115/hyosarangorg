@@ -38,6 +38,8 @@ export interface Feature {
   image?: string;
   imageAlt?: string;
   icon?: IconKey;
+  /** Makes the whole card a link: a site path ("/senior-college") or a same-page anchor ("#nursing"). */
+  href?: string;
 }
 
 export interface HomeCopy {

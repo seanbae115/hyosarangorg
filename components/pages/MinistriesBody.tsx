@@ -39,7 +39,17 @@ export default function MinistriesBody({
           </div>
           <div className="feature-grid">
             {t.ministries.map((m) => (
-              <FeatureCard key={m.name} feature={m} />
+              <FeatureCard
+                key={m.name}
+                feature={{
+                  ...m,
+                  // Same-page anchors work as-is in either language.
+                  href:
+                    m.href && !m.href.startsWith("#")
+                      ? hrefFor(m.href, lang)
+                      : m.href,
+                }}
+              />
             ))}
           </div>
           <div className="actions" style={{ marginTop: "1.5rem" }}>
@@ -59,13 +69,13 @@ export default function MinistriesBody({
       {/* Nursing-home ministry and Ensenada mission */}
       <div className="section section--paper">
         <div className="shell grid grid--2">
-          <div className="prose">
+          <div className="prose" id="nursing">
             <h2>{t.nursingHeading}</h2>
             {t.nursingBody.map((p) => (
               <p key={p}>{p}</p>
             ))}
           </div>
-          <div className="prose">
+          <div className="prose" id="mission">
             <h2>{t.missionHeading}</h2>
             <p>{t.missionBody}</p>
             <p>{t.missionPurposesLabel}</p>
