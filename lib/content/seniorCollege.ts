@@ -17,13 +17,14 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
     notice: faithNotice.en,
     aboutHeading: "Passing on a legacy of faith",
     about: [
-      "Hyosarang Senior College is a faith-based school dedicated to passing on a legacy of true faith to the next generation. The later years of life are a precious time to complete our calling as parents.",
+      "Hyosarang Senior College is a two-year, faith-based school dedicated to passing on a legacy of true faith to the next generation. The later years of life are a precious time to complete our calling as parents.",
       "Each class opens with the slogan “Let's gather, let's learn, let's set an example!” Courses center on faith that honors God with honesty, diligence, and truthfulness, alongside practical learning for daily life.",
       "What students learn goes back out: they serve on nursing-home visits and on the Ensenada mission trips.",
     ],
     facts: [
       { label: "When", value: "Worship and classes every Tuesday and Thursday" },
       { label: "Spring semester", value: "Starts the second Tuesday of February each year" },
+      { label: "Fall semester", value: "Starts the second Tuesday of August each year" },
       { label: "Since", value: "2003, with 65 students in the first year" },
     ],
     classesHeading: "Classes",
@@ -145,6 +146,16 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
         alt: "Seniors smiling at the camera in a smartphone class",
         caption: "Smartphone class, fall 2026",
       },
+      {
+        src: "/photos/college-art-instructor.jpg",
+        alt: "An art instructor in an apron setting out paints at a classroom table",
+        caption: "Art class",
+      },
+      {
+        src: "/photos/college-lecture.jpg",
+        alt: "A speaker with a name badge talking to students in a classroom",
+        caption: "In the classroom",
+      },
     ],
     viewLargerLabel: "View larger",
     classVideos: {
@@ -174,13 +185,14 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
     notice: faithNotice.ko,
     aboutHeading: "신앙의 유산을 물려주는 학교",
     about: [
-      "효사랑 시니어대학은 진실한 신앙의 유산을 다음 세대에 전하기 위한 신앙교육기관입니다. 시니어들의 남은 생애는 부모로서의 사명을 완수하는 귀한 시간입니다.",
+      "효사랑 시니어대학은 진실한 신앙의 유산을 다음 세대에 전하기 위한 2년제 신앙교육기관입니다. 시니어들의 남은 생애는 부모로서의 사명을 완수하는 귀한 시간입니다.",
       "매 수업의 시작마다 “모이자, 배우자, 본을 보이자!”라는 구호를 함께 외칩니다. 교육과정은 하나님을 경외하는 정직, 성실, 진실의 신앙을 중심으로, 일상생활에 필요한 여러 배움을 함께 나눕니다.",
       "배운 것은 다시 나눔이 됩니다. 학생들은 양로병원 사역과 멕시코 엔세나다 단기선교에서 섬깁니다.",
     ],
     facts: [
       { label: "수업", value: "매주 화요일·목요일 예배와 수업" },
       { label: "봄학기", value: "매년 2월 둘째 주 화요일 개강" },
+      { label: "가을학기", value: "매년 8월 둘째 주 화요일 개강" },
       { label: "개교", value: "2003년, 첫해 65명" },
     ],
     classesHeading: "수업 안내",
@@ -302,6 +314,16 @@ const seniorCollege: { en: SeniorCollegeCopy; ko: SeniorCollegeCopy } = {
         src: "/photos/college-smartphone.jpg",
         alt: "스마트폰 수업에서 카메라를 보고 웃는 시니어들",
         caption: "2026 가을학기 스마트폰 수업",
+      },
+      {
+        src: "/photos/college-art-instructor.jpg",
+        alt: "앞치마를 두르고 교실 탁자에 물감을 준비하는 미술 강사",
+        caption: "미술 수업",
+      },
+      {
+        src: "/photos/college-lecture.jpg",
+        alt: "이름표를 단 강사가 교실에서 학생들에게 이야기하는 모습",
+        caption: "강의 시간",
       },
     ],
     viewLargerLabel: "크게 보기",

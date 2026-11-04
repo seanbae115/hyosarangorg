@@ -59,13 +59,19 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
     ],
     missionHeading: "Short-term mission to Ensenada, Mexico",
     missionBody:
-      "Twice a year, after the spring and fall semesters, members travel to Ensenada, Mexico. They lead worship and perform nanta, healing dance, harmonica, and aerophone at a senior home and at rehabilitation centers for women and youth.",
+      "Twice a year, after the spring and fall semesters, members travel to Ensenada, Mexico. They lead worship and perform nanta, healing dance, harmonica, and aerophone at a senior home and at rehabilitation centers for women and youth, and visit alternative schools.",
     missionPurposesLabel: "The mission has three purposes:",
     missionPurposes: [
       "To hold the seniors of Mexico in our hearts.",
       "To join the local missionaries' passion for the gospel and take part in building God's kingdom.",
       "To serve the people of Mexico with what we learned through Senior College education and training.",
     ],
+    missionImage: {
+      src: "/photos/mission-school-2026.jpg",
+      alt: "An outdoor tent classroom with rows of school chairs and a Spanish lesson on the whiteboard",
+      caption: "A school classroom in Mexico, June 2026",
+    },
+    viewLargerLabel: "View larger",
     missionVideos: {
       heading: "Ensenada mission videos",
       note: "Videos and titles are in Korean.",
@@ -120,13 +126,19 @@ const ministries: { en: MinistriesCopy; ko: MinistriesCopy } = {
     ],
     missionHeading: "멕시코 엔세나다 단기선교",
     missionBody:
-      "1년에 두 번, 봄학기와 가을학기를 마치고 멕시코 엔세나다로 단기선교를 갑니다. 시니어대학에서 배운 난타, 힐링댄스, 하모니카, 에어로폰으로 양로원과 여성·청소년 갱생원에서 예배와 공연을 합니다.",
+      "1년에 두 번, 봄학기와 가을학기를 마치고 멕시코 엔세나다로 단기선교를 갑니다. 시니어대학에서 배운 난타, 힐링댄스, 하모니카, 에어로폰으로 양로원과 여성·청소년 갱생원에서 예배와 공연을 하고, 대안학교도 방문합니다.",
     missionPurposesLabel: "단기선교의 목적은 세 가지입니다.",
     missionPurposes: [
       "멕시코에 있는 시니어들의 영혼을 마음에 품습니다.",
       "현지 선교사님의 복음을 향한 열정에 동참하여 하나님 나라를 세우는 일에 참여합니다.",
       "시니어대학의 교육과 훈련으로 배운 것을 멕시코의 영혼들과 나눕니다.",
     ],
+    missionImage: {
+      src: "/photos/mission-school-2026.jpg",
+      alt: "학생용 의자가 줄지어 놓이고 화이트보드에 스페인어 수업 내용이 적힌 야외 천막 교실",
+      caption: "멕시코의 학교 교실, 2026년 6월",
+    },
+    viewLargerLabel: "크게 보기",
     missionVideos: {
       heading: "엔세나다 단기선교 영상",
       videos: missionVideos,

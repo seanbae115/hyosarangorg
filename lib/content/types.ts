@@ -289,6 +289,8 @@ export interface MinistriesCopy {
   missionBody: string;
   missionPurposesLabel: string;
   missionPurposes: string[];
+  missionImage?: GalleryItem;
+  viewLargerLabel: string;
   missionVideos: VideoSection;
   contactLead: string;
   contactLinkLabel: string;

@@ -124,6 +124,10 @@ const wixPhotos = [
   ["1d13c8_cd4aa3c22dac416bab66afdaf2bb605b_mv2.jpg", "college-harmonica.jpg"],
   ["1d13c8_f80979d3c28c4130a8f06815a5367e64_mv2.jpg", "college-nanta.jpg"],
   ["1d13c8_8969924c50b54988831ad433968d276f_mv2.jpg", "college-smartphone.jpg"],
+  // From the second Wix site (hyosarangus.wixsite.com/my-site-1), added 2026-11-03.
+  ["1d13c8_4e30fce335d74834b5b1a9949e19ef15_mv2.jpg", "college-art-instructor.jpg"],
+  ["1d13c8_92d1b930020b4aa2b4a52b8d009e11e7_mv2.jpg", "college-lecture.jpg"],
+  ["1d13c8_9c77e2e9a46a4360b7e7938ad04dc996_mv2.jpg", "mission-school-2026.jpg"],
   // News (old Wix blog posts)
   ["1d13c8_1f48ee582009488981c15f24ed2e5bce_mv2.jpg", "news-fall-2026.jpg"],
   ["1d13c8_ae842dca7ad9443487027e7c007aa320_mv2.jpg", "news-bible-college.jpg"],

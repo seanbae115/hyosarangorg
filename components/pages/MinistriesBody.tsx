@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import FeatureCard from "@/components/FeatureCard";
 import FaithNotice from "@/components/FaithNotice";
 import VideoGrid from "@/components/VideoGrid";
+import ZoomImage from "@/components/ZoomImage";
 import { hrefFor, type Lang } from "@/lib/nav";
 import type { MinistriesCopy } from "@/lib/content/types";
 
@@ -73,6 +74,14 @@ export default function MinistriesBody({
                 <li key={p}>{p}</li>
               ))}
             </ol>
+            {t.missionImage ? (
+              <ZoomImage
+                src={t.missionImage.src}
+                alt={t.missionImage.alt}
+                caption={t.missionImage.caption}
+                viewLabel={t.viewLargerLabel}
+              />
+            ) : null}
           </div>
         </div>
       </div>
