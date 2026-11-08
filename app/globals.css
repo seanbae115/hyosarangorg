@@ -60,7 +60,7 @@ html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 96px;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1060px) {
   html {
     scroll-padding-top: 148px;
   }
@@ -557,9 +557,19 @@ a {
   display: none;
 }
 
-/* Below this width the second-row nav no longer fits (EN is the widest);
-   check scrollWidth at the breakpoint after adding or renaming an item. */
-@media (max-width: 1199px) {
+/* 1060px keeps the nav row on landscape tablets (iPad 1133-1194px,
+   Surface Go at 175%). English is the widest: from 1060 to 1199px its
+   links drop to 17px with 16px gaps to fit (12px spare at 1060, measured
+   2026-11-07). Check scrollWidth at 1060px after adding or renaming an item. */
+@media (min-width: 1060px) and (max-width: 1199px) {
+  html[lang="en"] .desktop-nav__inner {
+    gap: 16px;
+  }
+  html[lang="en"] .desktop-nav a {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1059px) {
   .desktop-nav {
     display: none;
   }
